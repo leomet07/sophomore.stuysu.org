@@ -1,4 +1,14 @@
 .main {
-	padding: 8px;
-	text-align: center;
+	padding-top: 10px;
+	text-align: left;
+	width: 94vw;
+	margin: auto;
+}
+
+.title {
+	font-weight: 400;
+	font-size: 3rem;
+}
+.bolded_insert {
+	font-weight: bold;
 }

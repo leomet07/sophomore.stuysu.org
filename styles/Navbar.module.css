@@ -1,0 +1,16 @@
+#nav {
+	padding-left: auto;
+	width: 94vw;
+	margin: auto;
+}
+
+#links_container {
+	font-size: 1.5rem;
+	display: flex;
+	width: fit-content;
+	margin-left: auto;
+}
+.link {
+	margin-left: 10px;
+	margin-right: 10px;
+}

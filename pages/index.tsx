@@ -16,7 +16,8 @@ const Home: NextPage = () => {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>
-					Welcome to the Sophomore Caucus website!
+					SOPHOMORE CAUCUS&nbsp;
+					<span className={styles.bolded_insert}>&lsquo;22</span>
 				</h1>
 			</main>
 		</>
