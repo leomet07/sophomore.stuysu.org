@@ -2,12 +2,15 @@
 	padding-left: auto;
 	width: 94vw;
 	margin: auto;
+	display: flex;
+	align-items: center;
 }
 
 #links_container {
 	font-size: 1.5rem;
 	display: flex;
 	width: fit-content;
+	height: fit-content;
 	margin-left: auto;
 }
 .link {
@@ -18,5 +21,11 @@
 	#links_container {
 		margin: auto;
 		font-size: 1.4rem;
+	}
+}
+@media (max-width: 370px) {
+	#links_container {
+		margin: auto;
+		font-size: 1.35rem;
 	}
 }
