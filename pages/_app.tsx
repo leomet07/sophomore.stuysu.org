@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<Script
 				async
 				defer
-				data-website-id="1b6c4e62-b876-4452-97fb-658d7bc3a98b"
+				data-website-id="99e445a1-7625-4edb-9a81-d3fbcef41c78"
 				src="https://umami-fork-alpha.vercel.app/umami.js"
 			></Script>
 			<div id="navbar_parent">
