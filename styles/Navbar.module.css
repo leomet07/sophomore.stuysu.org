@@ -14,3 +14,9 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+@media (max-width: 400px) {
+	#links_container {
+		margin: auto;
+		font-size: 1.4rem;
+	}
+}
