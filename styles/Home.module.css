@@ -47,7 +47,6 @@
 	height: 350px;
 	margin-top: 50px;
 	width: 100%;
-	/* border: 1px solid red; */
 	display: flex;
 	justify-content: space-around;
 }
@@ -76,8 +75,7 @@
 		width: 100%;
 		max-width: 100%;
 	}
-}
-@media (max-width: 600px) {
+
 	#bell_schedule_container {
 		height: fit-content;
 	}

@@ -1,19 +1,20 @@
 #bell_schedule_parent {
 	width: 100%;
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding-top: 20px;
+	height: calc(fit-content + 20px);
 }
 
 #bell_schedule {
 	height: 330px;
 	padding: 20px;
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 30px;
-	margin-top: auto;
 	border: 1px solid black;
 	border-radius: 10px;
+	margin-top: 0px;
 }
 
 #label {
@@ -30,6 +31,7 @@
 	padding-right: 10px;
 	padding-left: 10px;
 	margin-left: 2vw;
+	margin-top: -20px;
 	padding: 20px;
 }
 
@@ -57,7 +59,16 @@
 	margin-right: 5px;
 	margin-left: 5px;
 }
-@media (max-width: 600px) {
+
+.hidden #bell_schedule_parent {
+	height: 40px;
+}
+
+.hidden #bell_schedule {
+	height: 0px;
+}
+
+@media (max-width: 1130px) {
 	#schedule_container {
 		display: block;
 	}
@@ -82,13 +93,14 @@
 		/* For the safari bug */
 		margin-bottom: 0px;
 	}
-
-	#bell_schedule_parent {
-		height: 520px;
-	}
 	#bell_schedule {
 		height: 500px;
 		padding-top: 20px;
 		padding-bottom: 20px;
+		margin-top: 0px;
+	}
+
+	#label {
+		cursor: pointer;
 	}
 }
