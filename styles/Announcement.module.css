@@ -1,48 +1,48 @@
 .announcement {
-    position: relative;
-    box-sizing: border-box;
+	position: relative;
+	box-sizing: border-box;
 
-    min-height: 6rem;
-    height: 20vh;
-    margin-bottom: 2vh;
+	min-height: 6rem;
+	height: 20vh;
+	margin-bottom: 2vh;
 
-    /* Prim [day] */
-    border: 1px solid #000000;
-    border-radius: 10px;
+	/* Prim [day] */
+	border: 1px solid #000000;
+	border-radius: 10px;
 
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+	/* Inside auto layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
 }
 
 .date {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 2.5%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 2.5%;
 
-    font-family: 'Manrope', "Arial", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 0.9rem;
+	font-family: "Manrope", "Arial", sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 0.9rem;
 
-    text-align: right;
+	text-align: right;
 
-    /* Prim [day] */
-    color: #000000;
+	/* Prim [day] */
+	color: #000000;
 }
 
 .text {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 5%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 5%;
 
-    font-family: 'Manrope', "Arial", sans-serif;
-    font-style: normal;
-    font-weight: 450;
-    font-size: 1.5rem;
+	font-family: "Manrope", "Arial", sans-serif;
+	font-style: normal;
+	font-weight: 450;
+	font-size: 1.5rem;
 
-    color: #000000;
+	color: #000000;
 }
