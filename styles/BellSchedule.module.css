@@ -65,12 +65,22 @@
 	#left {
 		display: block;
 		height: fit-content;
+		margin-top: 0px;
+		margin-left: 0px;
 	}
 
 	#right p,
 	#left p {
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 9px; /* Odd number, 9px is a comprimise due to safari bug */
+		margin-bottom: 9px;
+		line-height: 1.45;
+		/* Explicitley define line height so that safari mobile and desktop renders match */
+		/* Weird, I know. */
+	}
+
+	#schedule_container p:last-child {
+		/* For the safari bug */
+		margin-bottom: 0px;
 	}
 
 	#bell_schedule_parent {
