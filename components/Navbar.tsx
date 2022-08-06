@@ -7,13 +7,15 @@ const Navbar = () => {
 	return (
 		<nav id={styles.nav}>
 			<Link href="/" passHref>
-				<Image
-					src={logoImg}
-					id={styles.logo}
-					alt="Sophomore Caucus and the SU"
-					width="50"
-					height="50"
-				/>
+				<a>
+					<Image
+						src={logoImg}
+						id={styles.logo}
+						alt="Sophomore Caucus and the SU"
+						width="50"
+						height="50"
+					/>
+				</a>
 			</Link>
 			<div id={styles.links_container}>
 				<div className={styles.link}>
