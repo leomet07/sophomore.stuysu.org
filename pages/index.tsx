@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Announcement from "../components/Announcement"
 import ScheduleWidget from "../components/ScheduleWidget";
 
 const Home: NextPage = () => {
@@ -22,6 +23,11 @@ const Home: NextPage = () => {
 				</h1>
 				<section id={styles.schedule_widget}>
 					<ScheduleWidget />
+				</section>
+				<section id={styles.announcements}>
+					<Announcement text={"test"} date={"6/9"} />
+					<Announcement text={"Lorem ipsum something idk"} date={"12/24"} />
+					<Announcement text={"Something something"} date={"2/22"} />
 				</section>
 			</main>
 		</>

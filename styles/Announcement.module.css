@@ -1,0 +1,57 @@
+.announcement {
+    position: relative;
+    box-sizing: border-box;
+
+    width: 30vw;
+    min-height: 6rem;
+    height: 20vh;
+
+    /* Prim [day] */
+    border: 1px solid #000000;
+    border-radius: 10px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2.5%;
+
+    font-family: 'Manrope', "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9rem;
+
+    text-align: right;
+
+    /* Prim [day] */
+    color: #000000;
+}
+
+.text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5%;
+
+    font-family: 'Manrope', "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 1.5rem;
+
+    color: #000000;
+}
+
+@media (max-width: 750px) {
+    .text {
+        font-size: 1.00rem;
+    }
+    .date {
+        padding: 5%;
+    }
+}
