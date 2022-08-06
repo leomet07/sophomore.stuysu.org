@@ -2,9 +2,9 @@
     position: relative;
     box-sizing: border-box;
 
-    width: 30vw;
     min-height: 6rem;
     height: 20vh;
+    margin-bottom: 2vh;
 
     /* Prim [day] */
     border: 1px solid #000000;
@@ -45,13 +45,4 @@
     font-size: 1.5rem;
 
     color: #000000;
-}
-
-@media (max-width: 750px) {
-    .text {
-        font-size: 1.00rem;
-    }
-    .date {
-        padding: 5%;
-    }
 }

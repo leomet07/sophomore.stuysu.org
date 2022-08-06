@@ -16,7 +16,8 @@
 #announcements {
 	margin-top: 50px;
 	width: 100%;
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 30vw);
 	justify-content: space-between;
 
 }
@@ -28,6 +29,13 @@
 	}
 	#announcements {
 		margin-top: 30px;
+		grid-template-columns: repeat(auto-fill, 94vw);
+	}
+}
+@media (min-width: 700px) and (max-width: 1000px) {
+	#announcements {
+		margin-top: 40px;
+		grid-template-columns: repeat(auto-fill, 46vw);
 	}
 }
 #schedule_widget {
