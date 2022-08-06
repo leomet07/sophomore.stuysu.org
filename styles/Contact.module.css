@@ -1,6 +1,7 @@
 .main {
-    height: 100vh;
+    height: calc(100vh - 65px);
     width: 100vw;
+    overflow-x: hidden;
     overflow-y: hidden;
 
 }
@@ -61,10 +62,6 @@
 
 
     position: absolute;
-    /*
-    left: -25vw;
-    bottom: -135vw;
-     */
     top: 35%;
 
     border-top-left-radius: 100vw;
@@ -74,13 +71,3 @@
     /* Prim [day] */
     background: #000000;
 }
-
-/*
-@media (max-width: 700px) {
-    .prompt {
-        width: 45vw;
-        height: 15vw;
-    }
-
-}
-*/
