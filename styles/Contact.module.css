@@ -1,0 +1,86 @@
+.main {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+
+}
+
+.title {
+    /* CONTACT US */
+
+    position: static;
+    width: 125%;
+    margin-left: -12.5%;
+
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+
+    font-family: "Manrope", "Arial", sans-serif;
+    font-weight: bolder;
+    font-size: 17.75vw;
+    text-align: center;
+
+    /* Prim [day] */
+    color: #000000;
+}
+
+.prompt {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+
+    width: 15rem;
+    height: 5rem;
+
+    position: relative;
+
+    margin: auto;
+
+    /* Base [day] */
+    background: #FFFFFF;
+
+    /* Prim [day] */
+    border: 1px solid #000000;
+    border-radius: 52px;
+}
+.prompt p {
+    margin: auto;
+    font-family: "Manrope", "Arial", sans-serif;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: center;;
+    /* Prim [day] */
+    color: #000000;
+}
+
+.circle {
+    height: max(75vw, 100vh);
+    width: 150vw;
+    z-index: -1;
+
+
+    position: absolute;
+    /*
+    left: -25vw;
+    bottom: -135vw;
+     */
+    top: 35%;
+
+    border-top-left-radius: 100vw;
+    border-top-right-radius: 100vw;
+
+
+    /* Prim [day] */
+    background: #000000;
+}
+
+/*
+@media (max-width: 700px) {
+    .prompt {
+        width: 45vw;
+        height: 15vw;
+    }
+
+}
+*/
