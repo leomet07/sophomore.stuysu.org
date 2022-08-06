@@ -17,6 +17,11 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+#logo {
+	cursor: pointer;
+}
+
 @media (max-width: 400px) {
 	#links_container {
 		margin: auto;
