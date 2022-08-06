@@ -1,5 +1,5 @@
 .main {
-    height: calc(100vh - 65px);
+    height: max(calc(100vh - 65px));
     width: 100vw;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -18,7 +18,7 @@
 
     font-family: "Manrope", "Arial", sans-serif;
     font-weight: bolder;
-    font-size: 17.75vw;
+    font-size: 16vw;
     text-align: center;
 
     /* Prim [day] */
@@ -70,4 +70,19 @@
 
     /* Prim [day] */
     background: #000000;
+}
+
+.buttons {
+    margin: 5% auto auto;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+.button {
+    width: 4rem;
+    height: 4rem;
+    margin: 2rem;
 }
