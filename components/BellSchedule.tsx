@@ -13,7 +13,7 @@ const BellSchedule = () => {
 							<span className={styles.highlight}>
 								Before school
 							</span>
-							&nbsp;Before 8:00
+							&nbsp;Up to 8:00
 						</p>
 						<p>
 							<span className={styles.highlight}>Period 1</span>
