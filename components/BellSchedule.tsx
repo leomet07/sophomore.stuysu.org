@@ -3,16 +3,19 @@ import { useState, useEffect } from "react";
 
 const BellSchedule = () => {
 	const [width, setWidth] = useState(0);
-	const updateDimensions = () => {
-		setWidth(window.innerWidth);
-	};
+
 	useEffect(() => {
+		const updateDimensions = () => {
+			setWidth(window.innerWidth);
+		};
 		setWidth(window.innerWidth);
+		if (window.innerWidth <= 1130 && visibility) {
+			setVisibility(false);
+		}
 		window.addEventListener("resize", updateDimensions);
+
 		return () => window.removeEventListener("resize", updateDimensions);
 	}, []);
-	if (typeof window !== "undefined") {
-	}
 
 	const [visibility, setVisibility] = useState(true);
 	const handleOnClick = () => {
