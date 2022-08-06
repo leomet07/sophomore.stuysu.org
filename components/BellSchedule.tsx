@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import styles from "../styles/BellSchedule.module.css";
 import { useState, useEffect } from "react";
 
