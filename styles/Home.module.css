@@ -42,3 +42,43 @@
 	width: 100%;
 	height: 200px;
 }
+
+#schedule_information {
+	height: 350px;
+	margin-top: 50px;
+	width: 100%;
+	/* border: 1px solid red; */
+	display: flex;
+	justify-content: space-around;
+}
+
+#bell_schedule_container {
+	width: 60%;
+	max-width: 730px;
+	height: 350px;
+}
+
+#weekly_schedule_container {
+	width: 35%;
+	height: 350px;
+}
+@media (max-width: 1130px) {
+	#schedule_information {
+		display: block;
+		height: fit-content;
+	}
+
+	#bell_schedule_container,
+	#weekly_schedule_container {
+		margin: auto;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+@media (max-width: 600px) {
+	#bell_schedule_container {
+		height: fit-content;
+	}
+}

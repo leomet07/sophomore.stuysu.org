@@ -1,0 +1,84 @@
+#bell_schedule_parent {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#bell_schedule {
+	height: 330px;
+	padding: 20px;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	margin-top: auto;
+	border: 1px solid darkgreen;
+	border-radius: 10px;
+}
+
+#label {
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 30px;
+	width: fit-content;
+	height: 40px;
+	position: absolute;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-left: 2vw;
+	padding: 20px;
+}
+
+#label span {
+	font-size: 1.3rem;
+}
+
+#schedule_container {
+	font-size: 1.3rem;
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+}
+
+#right,
+#left {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.highlight {
+	font-weight: bold;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+@media (max-width: 600px) {
+	#schedule_container {
+		display: block;
+	}
+	#right,
+	#left {
+		display: block;
+		height: fit-content;
+	}
+
+	#right p,
+	#left p {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	#bell_schedule_parent {
+		height: 520px;
+	}
+	#bell_schedule {
+		height: 500px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}

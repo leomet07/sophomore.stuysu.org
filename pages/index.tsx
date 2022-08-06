@@ -4,6 +4,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Announcement from "../components/Announcement";
 import ScheduleWidget from "../components/ScheduleWidget";
+import BellSchedule from "../components/BellSchedule";
+import WeeklySchedule from "../components/WeeklySchedule";
 
 const Home: NextPage = () => {
 	return (
@@ -23,6 +25,14 @@ const Home: NextPage = () => {
 				</h1>
 				<section id={styles.schedule_widget}>
 					<ScheduleWidget />
+				</section>
+				<section id={styles.schedule_information}>
+					<div id={styles.bell_schedule_container}>
+						<BellSchedule />
+					</div>
+					<div id={styles.weekly_schedule_container}>
+						<WeeklySchedule />
+					</div>
 				</section>
 				<section id={styles.announcements}>
 					<Announcement
