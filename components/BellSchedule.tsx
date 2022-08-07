@@ -8,6 +8,9 @@ const BellSchedule = () => {
 
 	useEffect(() => {
 		const updateDimensions = () => {
+			if (window.innerWidth <= 1130) {
+				setVisibility(false);
+			}
 			setWidth(window.innerWidth);
 		};
 		setWidth(window.innerWidth);

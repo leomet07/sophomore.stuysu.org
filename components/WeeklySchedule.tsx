@@ -9,6 +9,9 @@ const WeeklySchedule = () => {
 	useEffect(() => {
 		const updateDimensions = () => {
 			setWidth(window.innerWidth);
+			if (window.innerWidth <= 1130) {
+				setVisibility(false);
+			}
 		};
 		setWidth(window.innerWidth);
 		if (window.innerWidth <= 1130 && visibility) {
