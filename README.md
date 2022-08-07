@@ -12,6 +12,12 @@ The site for the Andy-Fin 22-23 Sophomore caucus.
 
 **Hosting:** Vercel
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`MONGODB_URI`
+
 ## Run Locally
 
 Clone the project
@@ -49,10 +55,6 @@ Run the production server
 ```bash
 npm start
 ```
-
-## Environment Variables
-
-None!
 
 ## Authors
 
