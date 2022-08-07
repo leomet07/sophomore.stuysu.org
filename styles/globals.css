@@ -13,6 +13,10 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: var(--main-font);
+	color: var(--primary-color);
+
+	/* as of right now, breaks negative z-index elements like the contact page */
+	background-color: var(--secondary-color);
 }
 
 a {
@@ -27,4 +31,25 @@ a {
 }
 #navbar_parent {
 	margin-top: 15px;
+}
+
+@media (prefers-color-scheme:light) {
+	:root {
+		--primary-color: black;
+		--secondary-color: white;
+		--tertiary-color: #302e2e;  /* name tentative, open to refactor */
+
+		/* assuming all assets are black for light mode by default */
+		--asset-filter: none;
+	}
+}
+@media (prefers-color-scheme:dark) {
+	:root {
+		--primary-color: white;
+		--secondary-color: black;
+		--tertiary-color: #cfd1d1;
+
+		/* it's ok to have a little invert, not the whole page */
+		--asset-filter: invert();
+	}
 }
