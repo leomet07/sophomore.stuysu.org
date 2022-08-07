@@ -7,9 +7,16 @@
 }
 
 #schedule_type {
+	margin-left: 2vw;
+}
+#current_time {
+	margin-left: calc(2vw + 130px);
+}
+
+.pill {
 	background-color: white;
 	border: 1px solid black;
-	border-radius: 10px;
+	border-radius: 30px;
 	width: fit-content;
 	height: 40px;
 	position: absolute;
@@ -17,13 +24,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-right: 10px;
-	padding-left: 10px;
-	margin-left: 50vw;
+	padding-right: 15px;
+	padding-left: 15px;
 }
-
-#schedule_type span {
-	font-size: 1.8rem;
+.pill span {
+	font-size: 1.3rem;
 }
 
 #schedule_widget {
@@ -42,7 +47,7 @@
 	align-self: flex-end;
 }
 
-#current_time {
+#current_period {
 	font-size: 3rem;
 
 	position: absolute;
@@ -58,7 +63,7 @@
 }
 @media (max-width: 750px) {
 	#schedule_type {
-		margin-left: 50vw;
+		margin-left: 20vw;
 	}
 	#schedule_widget {
 		font-size: 1.25rem;
