@@ -1,5 +1,4 @@
 #nav {
-	padding-left: auto;
 	width: 94vw;
 	margin: auto;
 	display: flex;
@@ -20,6 +19,7 @@
 
 #logo {
 	cursor: pointer;
+	filter: var(--asset-filter);
 }
 
 @media (max-width: 400px) {

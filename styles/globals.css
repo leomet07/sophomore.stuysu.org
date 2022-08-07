@@ -15,7 +15,7 @@ body {
 	font-family: var(--main-font);
 	color: var(--primary-color);
 
-	/* as of right now, breaks negative z-index elements like the contact page */
+	/* breaks negative z-index elements, so only use z-indices >= 0 */
 	background-color: var(--secondary-color);
 }
 

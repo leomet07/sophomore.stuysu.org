@@ -14,7 +14,7 @@
 	text-align: center;
 
 	/* Prim [day] */
-	color: #000000;
+	color: var(--primary-color);
 }
 
 #lets_talk {
@@ -32,21 +32,20 @@
 	margin: auto;
 
 	/* Base [day] */
-	background: #ffffff;
+	background: var(--secondary-color);
 
 	/* Prim [day] */
-	border: 1px solid #000000;
+	border: 1px solid var(--primary-color);
 	border-radius: 52px;
+	z-index: 1;
 }
 #lets_talk p {
-	/* margin: auto; */
-	/* padding: auto; */
 	font-family: "Manrope", "Arial", sans-serif;
 	font-style: normal;
 	font-size: 2rem;
 	text-align: center;
 	/* Prim [day] */
-	color: #000000;
+	color: var(--primary-color);
 }
 
 .limiter {
@@ -56,7 +55,7 @@
 }
 
 .circle {
-	z-index: -1;
+	z-index: 0;
 	height: 55vh;
 	width: 100vw;
 	position: fixed;
@@ -64,7 +63,7 @@
 	border-top-left-radius: 120vw;
 	border-top-right-radius: 120vw;
 	/* Prim [day] */
-	background: #302e2e;
+	background: var(--tertiary-color);
 	overflow-x: hidden;
 }
 
@@ -73,6 +72,7 @@
 }
 
 .buttons {
+	position: relative;
 	margin: 5% auto auto;
 	width: 50vw;
 	display: flex;
@@ -91,7 +91,6 @@
 #feedback {
 	text-align: center;
 	position: relative;
-	/* width: 65vw; */
 	padding-bottom: 5vh;
 
 	font-family: "Manrope", "Arial", sans-serif;
@@ -101,7 +100,7 @@
 	letter-spacing: 0.06em;
 
 	/* Base [day] */
-	color: #ffffff;
+	color: var(--secondary-color);
 }
 
 #feedback a {
@@ -114,16 +113,18 @@
 		bottom: 0;
 		width: 100vw;
 		height: 31vh; /* 1 extra to avoid a seam */
-		background-color: #302e2e;
-		z-index: -2;
+		background-color: var(--tertiary-color);
+		z-index: 0;
 	}
 	.circle {
 		bottom: 30vh;
+		height: 45vh;
 	}
 	.buttons {
 		width: 90vw;
+		z-index: 1;
 	}
-	.circle {
-		height: 45vh;
+	#feedback {
+		z-index: 1;
 	}
 }
