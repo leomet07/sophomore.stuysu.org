@@ -2,6 +2,7 @@
 	padding-top: 10px;
 	text-align: left;
 	width: 94vw;
+	max-width: 1200px;
 	margin: auto;
 }
 
@@ -17,7 +18,7 @@
 	margin-top: 50px;
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, 30vw);
+	grid-template-columns: repeat(auto-fill, min(390px, 28vw));
 	justify-content: space-between;
 }
 
@@ -38,9 +39,11 @@
 	}
 }
 #schedule_widget {
+	margin: auto;
 	margin-top: 20px;
 	width: 100%;
 	height: 200px;
+	/* max-width: 82.5vw; */
 }
 
 #schedule_information {
@@ -49,7 +52,7 @@
 	width: 100%;
 	/* border: 1px solid red; */
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 #bell_schedule_container {
