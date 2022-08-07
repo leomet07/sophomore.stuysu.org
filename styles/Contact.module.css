@@ -68,6 +68,10 @@
 	overflow-x: hidden;
 }
 
+.booster {
+	display: none;
+}
+
 .buttons {
 	margin: 5% auto auto;
 	width: 50vw;
@@ -103,15 +107,17 @@
 #feedback a {
 	text-decoration: underline;
 }
-@media (max-width: 700px) {
-	.buttons {
-		margin-top: 3rem;
-		width: 90vw;
+@media (max-width: 900px) {
+	.booster {
+		display: block;
+		position: fixed;
+		bottom: 0;
+		width: 100vw;
+		height: 31vh;  /* 1 extra to avoid a seam */
+		background-color: #302e2e;
+		z-index: -2;
 	}
-	.button {
-		margin: 1rem;
-	}
-	.title {
-		padding-top: 15vh;
+	.circle {
+		bottom: 30vh;
 	}
 }
