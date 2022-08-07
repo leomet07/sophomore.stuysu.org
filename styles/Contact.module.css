@@ -1,0 +1,123 @@
+.main {
+	height: min-content;
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.title {
+	padding-top: 2vh;
+	padding-bottom: 5vh;
+
+	font-family: "Manrope", "Arial", sans-serif;
+	font-weight: bolder;
+	font-size: 12vw;
+	text-align: center;
+
+	/* Prim [day] */
+	color: #000000;
+}
+
+#lets_talk {
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 15rem;
+	height: 5rem;
+
+	position: relative;
+
+	margin: auto;
+
+	/* Base [day] */
+	background: #ffffff;
+
+	/* Prim [day] */
+	border: 1px solid #000000;
+	border-radius: 52px;
+}
+#lets_talk p {
+	/* margin: auto; */
+	/* padding: auto; */
+	font-family: "Manrope", "Arial", sans-serif;
+	font-style: normal;
+	font-size: 2rem;
+	text-align: center;
+	/* Prim [day] */
+	color: #000000;
+}
+
+.limiter {
+	width: 100vw;
+	overflow-y: clip;
+	overflow-x: hidden;
+}
+
+.circle {
+	z-index: -1;
+	height: 55vh;
+	width: 100vw;
+	position: fixed;
+	bottom: 0;
+	border-top-left-radius: 120vw;
+	border-top-right-radius: 120vw;
+	/* Prim [day] */
+	background: #302e2e;
+	overflow-x: hidden;
+}
+
+.booster {
+	display: none;
+}
+
+.buttons {
+	margin: 5% auto auto;
+	width: 50vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	padding-top: 5vh;
+	padding-bottom: 7.5vh;
+}
+.button {
+	width: 3rem;
+	height: 3rem;
+	margin: 2rem;
+}
+
+#feedback {
+	text-align: center;
+	position: relative;
+	/* width: 65vw; */
+	padding-bottom: 5vh;
+
+	font-family: "Manrope", "Arial", sans-serif;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 27px;
+	letter-spacing: 0.06em;
+
+	/* Base [day] */
+	color: #ffffff;
+}
+
+#feedback a {
+	text-decoration: underline;
+}
+@media (max-width: 900px) {
+	.booster {
+		display: block;
+		position: fixed;
+		bottom: 0;
+		width: 100vw;
+		height: 31vh;  /* 1 extra to avoid a seam */
+		background-color: #302e2e;
+		z-index: -2;
+	}
+	.circle {
+		bottom: 30vh;
+	}
+}
