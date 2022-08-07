@@ -113,11 +113,17 @@
 		position: fixed;
 		bottom: 0;
 		width: 100vw;
-		height: 31vh;  /* 1 extra to avoid a seam */
+		height: 31vh; /* 1 extra to avoid a seam */
 		background-color: #302e2e;
 		z-index: -2;
 	}
 	.circle {
 		bottom: 30vh;
+	}
+	.buttons {
+		width: 90vw;
+	}
+	.circle {
+		height: 45vh;
 	}
 }
