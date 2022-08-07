@@ -2,16 +2,9 @@
 	height: min-content;
 	width: 100vw;
 	overflow-x: hidden;
-	/* overflow-y: hidden; */
 }
 
 .title {
-	/* CONTACT US */
-
-	/* position: static; */
-	/* width: 125%; */
-	/* margin-left: -12.5%; */
-
 	padding-top: 2vh;
 	padding-bottom: 5vh;
 
@@ -22,9 +15,6 @@
 
 	/* Prim [day] */
 	color: #000000;
-}
-
-.prompt {
 }
 
 #lets_talk {
@@ -60,11 +50,7 @@
 }
 
 .limiter {
-	/* position: absolute; */
-	/* height: calc(100vh - 15rem); */
 	width: 100vw;
-
-	/* bottom: 30%; */
 	overflow-y: clip;
 	overflow-x: hidden;
 }
@@ -73,14 +59,10 @@
 	z-index: -1;
 	height: 55vh;
 	width: 100vw;
-
 	position: fixed;
 	bottom: 0;
-	/* right: -2vw; */
-
 	border-top-left-radius: 120vw;
 	border-top-right-radius: 120vw;
-	/* top: 45%; */
 	/* Prim [day] */
 	background: #302e2e;
 	overflow-x: hidden;
