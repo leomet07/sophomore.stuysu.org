@@ -62,9 +62,6 @@
 	font-size: 2rem;
 }
 @media (max-width: 750px) {
-	#schedule_type {
-		margin-left: 20vw;
-	}
 	#schedule_widget {
 		font-size: 1.25rem;
 	}
