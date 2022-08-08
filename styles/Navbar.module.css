@@ -1,5 +1,4 @@
 #nav {
-	padding-left: auto;
 	width: 94vw;
 	margin: auto;
 	display: flex;
@@ -20,6 +19,7 @@
 
 #logo {
 	cursor: pointer;
+	filter: var(--asset-filter);
 }
 
 @media (max-width: 400px) {
@@ -33,4 +33,19 @@
 		margin: auto;
 		font-size: 1.35rem;
 	}
+}
+
+.toggle {
+	width: 1.5rem;
+	height: 1.5rem;
+	padding-top: 0.2rem;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.sun {
+	display: var(--display-dark-assets);
+}
+.moon {
+	display: var(--display-light-assets);
 }

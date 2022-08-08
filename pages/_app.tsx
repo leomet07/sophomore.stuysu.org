@@ -10,6 +10,26 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			{/* linter looks specifically for _document file, we use _app */
+			/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+			<Script id="temp" strategy="beforeInteractive">
+				{`
+					const localConf = localStorage.getItem("dark-mode");
+					const cssConf = window.matchMedia("(prefers-color-scheme: dark)");
+					if (localConf == null) {  // using == over === to catch null and undefined
+						// no toggle override, default to and listen to the system theme
+						document.documentElement.classList.toggle("dark-mode", cssConf.matches);
+						cssConf.onchange = (event) => {document.documentElement.classList.toggle("dark-mode", event.matches)};
+					} else {
+						document.documentElement.classList.toggle("dark-mode", localStorage.getItem("dark-mode") === 'dark');
+					}
+					document.addEventListener("storage", () => {
+    				cssConf.onchange = undefined;   // null out CSS event handler to prevent conflict
+    				document.documentElement.classList.toggle("dark-mode",
+        				localStorage.getItem("dark-mode") === 'dark');
+					});
+				`}
+			</Script>
 			<Script
 				async
 				defer

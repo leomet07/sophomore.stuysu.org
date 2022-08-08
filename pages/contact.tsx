@@ -26,7 +26,7 @@ const Contact: NextPage = () => {
 						<div className={styles.buttons}>
 							<IconContext.Provider
 								value={{
-									color: "white",
+									color: "var(--secondary-color)",
 									className: styles.button,
 								}}
 							>
