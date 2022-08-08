@@ -1,0 +1,54 @@
+.profile {
+    display: grid;
+    grid-template-columns: 25vw auto;
+    grid-template-rows: 30vw;
+    column-gap: 3vw;
+    align-items: center;
+    justify-items: center;
+}
+
+.director {
+    grid-template-columns: 25vw;
+}
+
+.image {
+    position: relative;
+    width: 25vw;
+    height: 25vw;
+}
+
+.description {
+    font-family: "Manrope", "Arial", sans-serif;
+    font-size: min(2vw, 1.5rem);
+    font-weight: 400;
+    line-height: 150%;
+
+    /* or 37px */
+    text-align: justify;
+    letter-spacing: 0.06em;
+}
+
+.description * {
+    padding-bottom: 3vh;
+}
+
+@media (orientation: portrait) or (max-width: 700px) {
+    .profile {
+        padding-top: 7.5vh;
+        grid-template-columns: 90vw;
+        grid-template-rows: none;
+    }
+    .description {
+        padding-top: 5%;
+        padding-right: 3.5vw;
+        padding-left: 3.5vw;
+        font-size: 1.5rem;
+
+    }
+
+    .image {
+        height: 80vw;
+        width: 80vw;
+    }
+
+}

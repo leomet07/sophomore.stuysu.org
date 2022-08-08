@@ -1,0 +1,15 @@
+.main {
+	padding-top: 10px;
+	text-align: left;
+	width: 94vw;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.title {
+	font-weight: 400;
+	font-size: 3rem;
+}
+.directors {
+	padding-top: 2%;
+}
