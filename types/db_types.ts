@@ -10,7 +10,7 @@ export interface ReceivedPolicy {
 	_id: mongoObjectId;
 	name: string;
 	description: string;
-	catagory: string;
+	category: string;
 	why?: string;
 	how?: string;
 }
