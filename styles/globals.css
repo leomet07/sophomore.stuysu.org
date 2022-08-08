@@ -39,8 +39,6 @@ a {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	transition-property: background-color, color;
-	transition-duration: 1s;
 }
 #navbar_parent {
 	margin-top: 15px;
