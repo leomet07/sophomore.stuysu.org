@@ -1,13 +1,22 @@
-import type { NextPage } from "next";
+import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Announcement from "../components/Announcement";
 import ScheduleWidget from "../components/ScheduleWidget";
 import BellSchedule from "../components/BellSchedule";
 import WeeklySchedule from "../components/WeeklySchedule";
+import { ReceivedAnnouncement } from "../types/db_types";
+import getServerUrl from "../lib/getServerUrl";
+import { InferGetServerSidePropsType } from "next";
+import { Key } from "react";
 
-const Home: NextPage = () => {
+const Home = (
+	props: InferGetServerSidePropsType<typeof getServerSideProps>
+) => {
+	const parseDate = function (d: string) {
+		return new Date(d).toLocaleString().split(",")[0];
+	};
+	console.log("Server url", props.serverUrl);
 	return (
 		<>
 			<Head>
@@ -35,29 +44,31 @@ const Home: NextPage = () => {
 					</div>
 				</section>
 				<section id={styles.announcements}>
-					<Announcement
-						text={"This program is brought to you by"}
-						date={"6/9"}
-					/>
-					<Announcement
-						text={"contributions to your local PBS station"}
-						date={"6/9"}
-					/>
-					<Announcement
-						text={"by viewers like you, thank you!"}
-						date={"6/9"}
-					/>
-					<Announcement text={"test"} date={"6/9"} />
-					<Announcement text={"one two three four"} date={"6/9"} />
-					<Announcement
-						text={"Lorem ipsum something idk"}
-						date={"12/24"}
-					/>
-					<Announcement text={"Something something"} date={"2/22"} />
+					{props.announcements.map((v) => (
+						<Announcement
+							key={v._id as Key}
+							text={v.title}
+							date={parseDate(String(v.date))}
+						/>
+					))}
 				</section>
 			</main>
 		</>
 	);
+};
+
+type getAnnouncementsResponse = {
+	success: boolean;
+	data: ReceivedAnnouncement[];
+	serverUrl: string;
+};
+
+export const getServerSideProps = async (
+	context: GetServerSidePropsContext
+) => {
+	const r: any = await fetch(getServerUrl() + "/api/get_announcements");
+	const data: getAnnouncementsResponse = await r.json();
+	return { props: { announcements: data.data, serverUrl: getServerUrl() } };
 };
 
 export default Home;
