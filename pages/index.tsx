@@ -13,7 +13,9 @@ import { Key } from "react";
 const Home = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) => {
-	console.log("Props : ", props.announcements);
+	const parseDate = function (d: string) {
+		return new Date(d).toLocaleString().split(",")[0];
+	};
 	return (
 		<>
 			<Head>
@@ -45,7 +47,7 @@ const Home = (
 						<Announcement
 							key={v._id as Key}
 							text={v.title}
-							date={"6/9"}
+							date={parseDate(String(v.date))}
 						/>
 					))}
 				</section>

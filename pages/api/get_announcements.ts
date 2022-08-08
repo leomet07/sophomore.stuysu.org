@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "../../lib/dbConnect";
 import Announcement from "../../models/Announcement";
 import { ReceivedAnnouncement } from "../../types/db_types";
+import { Types } from "mongoose";
 
 type ReponseData = {
 	success: boolean;
@@ -19,9 +20,17 @@ export default async function handler(
 	switch (method) {
 		case "GET":
 			try {
-				const announcements = (await Announcement.find(
-					{}
-				)) as ReceivedAnnouncement[];
+				let db_announcements = (await Announcement.find({})) as any[];
+
+				let announcements = db_announcements.map((v) => {
+					const objid = new Types.ObjectId(v._id);
+					const rdate = objid.getTimestamp();
+
+					let newv = v.toObject();
+					newv.date = rdate;
+
+					return newv;
+				}) as ReceivedAnnouncement[];
 
 				res.status(200).json({ success: true, data: announcements });
 			} catch (error) {
