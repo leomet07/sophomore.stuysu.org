@@ -16,6 +16,7 @@ const Home = (
 	const parseDate = function (d: string) {
 		return new Date(d).toLocaleString().split(",")[0];
 	};
+	console.log("Server url", props.serverUrl);
 	return (
 		<>
 			<Head>
@@ -59,6 +60,7 @@ const Home = (
 type getAnnouncementsResponse = {
 	success: boolean;
 	data: ReceivedAnnouncement[];
+	serverUrl: string;
 };
 
 export const getServerSideProps = async (
@@ -66,7 +68,7 @@ export const getServerSideProps = async (
 ) => {
 	const r: any = await fetch(getServerUrl() + "/api/get_announcements");
 	const data: getAnnouncementsResponse = await r.json();
-	return { props: { announcements: data.data } };
+	return { props: { announcements: data.data, serverUrl: getServerUrl() } };
 };
 
 export default Home;
