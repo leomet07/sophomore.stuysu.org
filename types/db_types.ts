@@ -6,3 +6,11 @@ export interface ReceivedAnnouncement {
 	title: string;
 	date: Date | string;
 }
+export interface ReceivedPolicy {
+	_id: mongoObjectId;
+	name: string;
+	description: string;
+	catagory: string;
+	why?: string;
+	how?: string;
+}

@@ -6,7 +6,7 @@ import { Types } from "mongoose";
 
 type ReponseData = {
 	success: boolean;
-	data?: ReceivedAnnouncement | ReceivedAnnouncement[];
+	data?: ReceivedAnnouncement[];
 };
 
 export default async function handler(
