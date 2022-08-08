@@ -38,16 +38,6 @@ export default async function handler(
 				res.status(400).json({ success: false });
 			}
 			break;
-		// case "POST":
-		// 	try {
-		// 		const announcement = (await Announcement.create(
-		// 			req.body
-		// 		)) as ReceivedAnnouncement;
-		// 		res.status(201).json({ success: true, data: announcement });
-		// 	} catch (error) {
-		// 		res.status(400).json({ success: false });
-		// 	}
-		// 	break;
 		default:
 			res.status(400).json({ success: false });
 			break;
