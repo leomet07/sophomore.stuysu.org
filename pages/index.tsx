@@ -14,7 +14,11 @@ const Home = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) => {
 	const parseDate = function (d: string) {
-		return new Date(d).toLocaleString().split(",")[0];
+		// Time is stored as GMT+0000 (aka UTC)
+		// The timezone is actually US eastern (where the DB server is located), api gets it as UTC
+		return new Date(d)
+			.toLocaleString("en-US", { timeZone: "UTC" })
+			.split(",")[0];
 	};
 	console.log("Server url", props.serverUrl);
 	return (

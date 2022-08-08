@@ -24,6 +24,8 @@ export default async function handler(
 
 				let announcements = db_announcements.map((v) => {
 					const objid = new Types.ObjectId(v._id);
+
+					// The timezone is actually US eastern (where the DB server is located), .getTimestamp() gets it as UTC
 					const rdate = objid.getTimestamp();
 
 					let newv = v.toObject();
