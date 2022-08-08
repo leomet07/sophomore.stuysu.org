@@ -22,6 +22,12 @@
 	filter: var(--asset-filter);
 }
 
+@media (max-width: 420px) {
+	.link {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
 @media (max-width: 400px) {
 	#links_container {
 		margin: auto;
@@ -32,6 +38,10 @@
 	#links_container {
 		margin: auto;
 		font-size: 1.35rem;
+	}
+	.link {
+		margin-left: 4px;
+		margin-right: 4px;
 	}
 }
 
