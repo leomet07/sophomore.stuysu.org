@@ -10,6 +10,13 @@
 	font-weight: 400;
 	font-size: 3rem;
 }
-.directors {
+
+.presidents {
 	padding-top: 2%;
+}
+
+.directors {
+	display: grid;
+	grid-template-columns: 30vw 30vw 30vw;
+	align-items: center;
 }

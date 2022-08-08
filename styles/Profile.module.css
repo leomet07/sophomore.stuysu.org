@@ -7,8 +7,10 @@
     justify-items: center;
 }
 
-.director {
+.director .profile {
     grid-template-columns: 25vw;
+    grid-template-rows: auto;
+    grid-row-gap: 3vh;
 }
 
 .image {
@@ -23,7 +25,6 @@
     font-weight: 400;
     line-height: 150%;
 
-    /* or 37px */
     text-align: justify;
     letter-spacing: 0.06em;
 }
@@ -33,7 +34,8 @@
 }
 
 @media (orientation: portrait) or (max-width: 700px) {
-    .profile {
+    .profile,
+    .director .profile {
         padding-top: 7.5vh;
         grid-template-columns: 90vw;
         grid-template-rows: none;
@@ -50,5 +52,4 @@
         height: 80vw;
         width: 80vw;
     }
-
 }
