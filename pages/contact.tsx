@@ -1,8 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Contact.module.css";
-import { IconContext } from "react-icons";
-import { SiInstagram, SiFacebook, SiGithub } from "react-icons/si";
+import SiInstagram from "../public/img/socials/instagram.svg";
+import SiFacebook from "../public/img/socials/facebook.svg";
+import SiGithub from "../public/img/socials/github.svg";
+import Image from "next/image";
 
 const Contact: NextPage = () => {
 	return (
@@ -24,12 +26,6 @@ const Contact: NextPage = () => {
 					<div className={styles.limiter}>
 						<div className={styles.circle} />
 						<div className={styles.buttons}>
-							<IconContext.Provider
-								value={{
-									color: "var(--secondary-color)",
-									className: styles.button,
-								}}
-							>
 								<a
 									href={
 										"https://www.instagram.com/sophomorecaucus/"
@@ -37,7 +33,7 @@ const Contact: NextPage = () => {
 									target={"_blank"}
 									rel="noreferrer"
 								>
-									<SiInstagram />
+									<Image alt="Instagram @sophomorecaucus" src={SiInstagram} layout="responsive" />
 								</a>
 								<a
 									href={
@@ -46,7 +42,7 @@ const Contact: NextPage = () => {
 									target={"_blank"}
 									rel="noreferrer"
 								>
-									<SiFacebook />
+									<Image alt="Facebook @StuySophCaucus" src={SiFacebook} layout="responsive" />
 								</a>
 								<a
 									href={
@@ -55,9 +51,8 @@ const Contact: NextPage = () => {
 									target={"_blank"}
 									rel="noreferrer"
 								>
-									<SiGithub />
+									<Image alt="Git Hub leomet07/sophomore.stuysu.org" src={SiGithub} layout="responsive" />
 								</a>
-							</IconContext.Provider>
 						</div>
 						<p id={styles.feedback}>
 							Got feedback for the caucus? Provide it anonymously{" "}
