@@ -6,3 +6,10 @@ export interface ReceivedAnnouncement {
 	title: string;
 	date: Date | string;
 }
+export interface ReceivedProfile {
+	_id: mongoObjectId;
+	imgSrc: string,
+	imgAlt: string,
+	description: string,
+	president: boolean
+}

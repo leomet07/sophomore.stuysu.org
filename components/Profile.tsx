@@ -9,7 +9,7 @@ const Profile = (props: { imgSrc: string, imgAlt: string, children: ReactNode })
      * children: React children elements composed of <p> tags for the profile's description
      */
     return (
-        <div className={`${styles.profile} ${styles.director}`}>
+        <div className={styles.profile}>
             <div className={styles.image}>
                 <Image src={props.imgSrc} alt={props.imgAlt} layout="fill" />
             </div>

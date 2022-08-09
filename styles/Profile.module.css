@@ -29,7 +29,7 @@
     letter-spacing: 0.06em;
 }
 
-.description * {
+.description p {
     padding-bottom: 3vh;
 }
 
@@ -45,7 +45,6 @@
         padding-right: 3.5vw;
         padding-left: 3.5vw;
         font-size: 1.5rem;
-
     }
 
     .image {

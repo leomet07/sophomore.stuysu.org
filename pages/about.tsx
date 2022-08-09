@@ -1,9 +1,19 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import { Profile, Director } from "../components/Profile";
 import styles from "../styles/About.module.css";
+import getServerUrl from "../lib/getServerUrl";
+import { ReceivedProfile } from "../types/db_types";
+import {GetServerSidePropsContext} from "next";
+import type { InferGetServerSidePropsType } from "next";
+import {Key} from "react";
 
-const About: NextPage = () => {
+const About = (
+	props: InferGetServerSidePropsType<typeof getServerSideProps>
+) => {
+	const presidents = props.profiles.filter((profile) => profile.president);
+	const directors = props.profiles.filter((profile) => !profile.president);
+	let line_key = 0;   // counter for mapping out keys for the <p> tags in President profiles
+	console.log(presidents, directors)
 	return (
 		<>
 			<Head>
@@ -16,33 +26,40 @@ const About: NextPage = () => {
 			<main className={styles.main}>
 				<h1 className={styles.title}>ABOUT US</h1>
 				<div className={styles.presidents}>
-					<Profile imgSrc={'/img/profiles/fin.jpg'} imgAlt={'_placehodler'} >
-						<p>
-							According to all known laws of aviation, there is no way a bee should be able to fly.
-							Its wings are too small to get its fat little body off the ground.
-						</p>
-						<p>
-							The bee, of course, flies anyway because bees don&apos;t care what humans think is impossible.
-						</p>
-					</Profile>
-					<Profile imgSrc={'/img/profiles/fin.jpg'} imgAlt={'_placehodler'} >
-						<p>
-							According to all known laws of aviation, there is no way a bee should be able to fly.
-							Its wings are too small to get its fat little body off the ground.
-						</p>
-						<p>
-							The bee, of course, flies anyway because bees don&apos;t care what humans think is impossible.
-						</p>
-					</Profile>
+					{
+						presidents.map((president) => (
+							<Profile key={president._id as Key} imgSrc={president.imgSrc} imgAlt={president.imgAlt} >
+								{
+									// Split president descriptions by newlines to delimit new paragraphs
+									president.description.split('\n').map((line) => (
+									<p key={++line_key as Key}> {line}</p>
+								))}
+							</Profile>
+						))}
 				</div>
 				<div className={styles.directors}>
-					<Director imgSrc={'/img/profiles/david.jpg'} imgAlt={'theegghead27 pfp'} description={'david (egg head)'}/>
-					<Director imgSrc={'/img/profiles/lenny.jpg'} imgAlt={'leomet07 pfp'} description={'lenny (leomet)'}/>
-					<Director imgSrc={'/img/profiles/will.jpg'} imgAlt={'willpill pfp'} description={'will (pill)'}/>
+					{directors.map((director) => (
+						<Director key={director._id as Key} imgSrc={director.imgSrc} imgAlt={director.imgAlt} description={director.description} />
+					))}
 				</div>
 			</main>
 		</>
 	)
 }
+
+type ProfilesResponse = {
+	success: boolean;
+	data: ReceivedProfile[];
+	serverUrl: string;
+}
+
+export const getServerSideProps = async (
+	context: GetServerSidePropsContext
+) => {
+	const r: any = await fetch(getServerUrl() + "/api/profiles");
+	const data: ProfilesResponse = await r.json();
+	return { props: { profiles: data.data, serverUrl: getServerUrl() } };
+}
+
 
 export default About;

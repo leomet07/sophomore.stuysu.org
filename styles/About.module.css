@@ -17,6 +17,12 @@
 
 .directors {
 	display: grid;
-	grid-template-columns: 30vw 30vw 30vw;
-	align-items: center;
+	grid-template-columns: 25vw 25vw 25vw;
+	justify-content: space-between;
+}
+
+@media (orientation: portrait) or (max-width: 700px) {
+	.directors {
+		grid-template-columns: auto;
+	}
 }
