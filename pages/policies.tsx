@@ -33,23 +33,28 @@ const Policies = (
 						<p>
 							<span className={styles.highlight}>
 								Description:
-							</span>{" "}
+							</span>
+							&nbsp;
 							{v.description}
 						</p>
-						<p>
-							<span className={styles.highlight}>How?</span>
-							&nbsp;
-							{v.how
-								? v.how
-								: `Policy "how" field not specified.`}
-						</p>
-						<p>
-							<span className={styles.highlight}>Why?</span>
-							&nbsp;
-							{v.why
-								? v.why
-								: `Policy "why" field not specified.`}
-						</p>
+						{v.how ? (
+							<p>
+								<span className={styles.highlight}>How?</span>
+								&nbsp;
+								{v.how}
+							</p>
+						) : (
+							<></>
+						)}
+						{v.why ? (
+							<p>
+								<span className={styles.highlight}>Why?</span>
+								&nbsp;
+								{v.why}
+							</p>
+						) : (
+							<></>
+						)}
 					</div>
 				))}
 			</main>
