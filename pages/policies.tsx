@@ -22,6 +22,17 @@ const Policies = (
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>OUR POLICIES</h1>
+				<nav id={styles.nav}>
+					<div className={styles.category}>
+						<span>Flexibility</span>
+					</div>
+					<div className={styles.category}>
+						<span>Inclusion</span>
+					</div>
+					<div className={styles.category}>
+						<span>Events</span>
+					</div>
+				</nav>
 				{props.policies.map((v) => (
 					<div key={v._id as Key} className={styles.policy}>
 						<h1>{v.name}</h1>
