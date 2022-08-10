@@ -13,3 +13,11 @@ export interface ReceivedProfile {
 	description: string,
 	president: boolean
 }
+export interface ReceivedPolicy {
+	_id: mongoObjectId;
+	name: string;
+	description: string;
+	category: string;
+	why?: string;
+	how?: string;
+}
