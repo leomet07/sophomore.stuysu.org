@@ -22,52 +22,64 @@ const Policies = (
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>OUR POLICIES</h1>
-				<nav id={styles.nav}>
-					<div className={styles.category}>
-						<span>Flexibility</span>
+				<div id={styles.internal_container}>
+					<div id={styles.nav_container}>
+						<nav id={styles.nav}>
+							<div className={styles.category}>
+								<span>Flexibility</span>
+							</div>
+							<div className={styles.category}>
+								<span>Inclusion</span>
+							</div>
+							<div className={styles.category}>
+								<span>Events</span>
+							</div>
+						</nav>
 					</div>
-					<div className={styles.category}>
-						<span>Inclusion</span>
-					</div>
-					<div className={styles.category}>
-						<span>Events</span>
-					</div>
-				</nav>
-				{props.policies.map((v) => (
-					<div key={v._id as Key} className={styles.policy}>
-						<h1>{v.name}</h1>
-						<p>
-							<span className={styles.highlight}>Catagory:</span>
-							&nbsp;
-							{v.category}
-						</p>
-						<p>
-							<span className={styles.highlight}>
-								Description:
-							</span>
-							&nbsp;
-							{v.description}
-						</p>
-						{v.how ? (
-							<p>
-								<span className={styles.highlight}>How?</span>
-								&nbsp;
-								{v.how}
-							</p>
-						) : (
-							<></>
-						)}
-						{v.why ? (
-							<p>
-								<span className={styles.highlight}>Why?</span>
-								&nbsp;
-								{v.why}
-							</p>
-						) : (
-							<></>
-						)}
-					</div>
-				))}
+					<section id={styles.policies_container}>
+						{props.policies.map((v) => (
+							<div key={v._id as Key} className={styles.policy}>
+								<h1>{v.name}</h1>
+								<p>
+									<span className={styles.highlight}>
+										Catagory:
+									</span>
+									&nbsp;
+									{v.category}
+								</p>
+								<p>
+									<span className={styles.highlight}>
+										Description:
+									</span>
+									&nbsp;
+									{v.description}
+								</p>
+								{v.how ? (
+									<p>
+										<span className={styles.highlight}>
+											How?
+										</span>
+										&nbsp;
+										{v.how}
+									</p>
+								) : (
+									<></>
+								)}
+								{v.why ? (
+									<p>
+										<span className={styles.highlight}>
+											Why?
+										</span>
+										&nbsp;
+										{v.why}
+									</p>
+								) : (
+									<></>
+								)}
+							</div>
+						))}
+					</section>
+				</div>
 			</main>
 		</>
 	);
