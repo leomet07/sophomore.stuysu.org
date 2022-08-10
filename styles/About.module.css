@@ -23,7 +23,7 @@
 	align-content: center;
 }
 
-@media (orientation: portrait) or (max-width: 700px) {
+@media (max-width: 700px) {
 	.directors {
 		display: block;
 	}
