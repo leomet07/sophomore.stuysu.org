@@ -1,0 +1,30 @@
+.main {
+	padding-top: 10px;
+	text-align: left;
+	width: 94vw;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.title {
+	font-weight: 400;
+	font-size: 3rem;
+}
+
+.presidents {
+	padding-top: 2%;
+}
+
+.directors {
+	display: grid;
+	grid-template-columns: repeat(3, 30%);
+	grid-column-gap: 3.33333%;
+	justify-content: space-between;
+	align-content: center;
+}
+
+@media (max-width: 700px) {
+	.directors {
+		display: block;
+	}
+}

@@ -84,10 +84,12 @@
 	padding-top: 5vh;
 	padding-bottom: 7.5vh;
 }
-.button {
+.buttons a {
+	display: block;
 	width: 3rem;
 	height: 3rem;
 	margin: 2rem;
+	filter: var(--asset-filter);
 }
 
 #feedback {
