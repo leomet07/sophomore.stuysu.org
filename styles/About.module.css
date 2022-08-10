@@ -17,12 +17,14 @@
 
 .directors {
 	display: grid;
-	grid-template-columns: 25vw 25vw 25vw;
+	grid-template-columns: repeat(3, 30%);
+	grid-column-gap: 3.33333%;
 	justify-content: space-between;
+	align-content: center;
 }
 
 @media (orientation: portrait) or (max-width: 700px) {
 	.directors {
-		grid-template-columns: auto;
+		display: block;
 	}
 }

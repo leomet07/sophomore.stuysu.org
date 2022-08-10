@@ -1,22 +1,25 @@
 .profile {
     display: grid;
-    grid-template-columns: 25vw auto;
-    grid-template-rows: 30vw;
+    grid-template-columns: 33% auto;
+    grid-template-rows: auto;
     column-gap: 3vw;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 10vh;
+}
+
+.director .profile {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
 }
 
-.director .profile {
-    grid-template-columns: 25vw;
-    grid-template-rows: auto;
-    grid-row-gap: 3vh;
-}
-
 .image {
     position: relative;
-    width: 25vw;
-    height: 25vw;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
 }
 
 .description {
@@ -36,9 +39,14 @@
 @media (orientation: portrait) or (max-width: 700px) {
     .profile,
     .director .profile {
-        padding-top: 7.5vh;
-        grid-template-columns: 90vw;
+        display: grid;
+        grid-template-columns: auto;
         grid-template-rows: none;
+        column-gap: 3vw;
+        align-items: center;
+        justify-items: center;
+        padding-top: 5vh;
+        padding-bottom: 0;
     }
     .description {
         padding-top: 5%;
@@ -47,8 +55,10 @@
         font-size: 1.5rem;
     }
 
-    .image {
+    .image,
+    .director .profile .image {
         height: 80vw;
         width: 80vw;
+        padding-bottom: 0;
     }
 }
