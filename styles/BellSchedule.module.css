@@ -28,11 +28,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-right: 10px;
-	padding-left: 10px;
-	margin-left: 2vw;
+	margin-left: 3vw;
 	margin-top: -20px;
 	padding: 20px;
+	padding-right: 25px;
+	padding-left: 25px;
 }
 
 #label span {
