@@ -8,7 +8,7 @@
 
 .title {
 	font-weight: 400;
-	font-size: 3rem;
+	font-size: 4rem;
 }
 .bolded_insert {
 	font-weight: bold;
@@ -18,7 +18,7 @@
 	margin-top: 50px;
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, min(390px, 28vw));
+	grid-template-columns: repeat(auto-fill, min(360px, 28vw));
 	justify-content: space-between;
 }
 

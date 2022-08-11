@@ -14,6 +14,11 @@
 	font-size: 1.3rem;
 	margin-bottom: 50px;
 }
+
+.policy p {
+	margin-bottom: 7px;
+}
+
 .highlight {
 	font-weight: bold;
 }
@@ -54,6 +59,7 @@
 	cursor: pointer;
 	width: 190px;
 	text-align: center;
+	transition-duration: 0.35s;
 }
 .category:hover {
 	color: var(--secondary-color);

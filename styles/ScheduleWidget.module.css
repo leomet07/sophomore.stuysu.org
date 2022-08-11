@@ -10,7 +10,7 @@
 	margin-left: 2vw;
 }
 #current_time {
-	margin-left: calc(2vw + 130px);
+	margin-left: calc(3vw + 150px);
 }
 
 .pill {
@@ -24,8 +24,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: 25px;
+	padding-left: 25px;
 }
 .pill span {
 	font-size: 1.3rem;
@@ -37,7 +37,9 @@
 	height: 180px;
 	border: 1px solid var(--primary-color);
 	border-radius: 10px;
-	padding: 10px;
+	padding: 12px;
+	padding-right: 20px;
+	padding-left: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -48,7 +50,7 @@
 }
 
 #current_period {
-	font-size: 3rem;
+	font-size: 3.5rem;
 
 	position: absolute;
 	margin-left: auto;
