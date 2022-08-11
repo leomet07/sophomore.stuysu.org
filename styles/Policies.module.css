@@ -10,6 +10,13 @@
 	font-weight: 400;
 	font-size: 3rem;
 }
+
+@media (max-width: 700px) {
+	.title {
+		text-align: center;
+	}
+}
+
 .policy {
 	font-size: 1.3rem;
 	margin-bottom: 50px;
