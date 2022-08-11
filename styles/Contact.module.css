@@ -37,6 +37,10 @@
 	position: relative;
 }
 
+.prompt {
+	position: relative;
+}
+
 #lets_talk {
 	display: flex;
 	box-sizing: border-box;
