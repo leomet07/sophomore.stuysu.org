@@ -56,7 +56,7 @@ type ProfilesResponse = {
 export const getServerSideProps = async (
 	context: GetServerSidePropsContext
 ) => {
-	const r: any = await fetch(getServerUrl() + "/api/profiles");
+	const r: any = await fetch(getServerUrl() + "/api/get_profiles");
 	const data: ProfilesResponse = await r.json();
 	return { props: { profiles: data.data, serverUrl: getServerUrl() } };
 }
