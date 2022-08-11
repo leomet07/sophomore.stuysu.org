@@ -39,7 +39,10 @@
 .profile_pronouns {
 	font-size: 1.35rem;
 }
-
+.profile_role {
+	font-size: 1.35rem;
+	font-weight: bold;
+}
 .description p {
 	padding-bottom: 1vh;
 }

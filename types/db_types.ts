@@ -14,6 +14,7 @@ export interface ReceivedProfile {
 	president: boolean;
 	name: string;
 	pronouns: string;
+	role: string;
 }
 export interface ReceivedPolicy {
 	_id: mongoObjectId;

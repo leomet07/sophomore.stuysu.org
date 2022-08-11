@@ -7,6 +7,7 @@ const ProfileSchema = new mongoose.Schema({
 	president: Boolean,
 	name: String,
 	pronouns: String,
+	role: String,
 });
 const ProfileModel =
 	mongoose.models.Profile || mongoose.model("Profile", ProfileSchema);
