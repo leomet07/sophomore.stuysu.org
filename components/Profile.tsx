@@ -7,6 +7,7 @@ const Profile = (props: {
 	imgAlt: string;
 	children: ReactNode;
 	name: string;
+	pronouns: string;
 }) => {
 	/*
 	 * imgSrc: URI to an image (of 1:1 aspect ratio) representing the profile
@@ -20,6 +21,7 @@ const Profile = (props: {
 			</div>
 			<div className={styles.profile_info}>
 				<h1 className={styles.profile_name}>{props.name}</h1>
+				<p className={styles.profile_pronouns}>{props.pronouns}</p>
 				<div className={styles.description}> {props.children} </div>
 			</div>
 		</div>
@@ -31,6 +33,7 @@ const Director = (props: {
 	imgAlt: string;
 	description: string;
 	name: string;
+	pronouns: string;
 }) => {
 	/*
 	 * Subclass/Wrapper around <Profile> to apply specific Director card styling
@@ -45,6 +48,7 @@ const Director = (props: {
 				imgSrc={props.imgSrc}
 				imgAlt={props.imgAlt}
 				name={props.name}
+				pronouns={props.pronouns}
 			>
 				<p> {props.description} </p>
 			</Profile>

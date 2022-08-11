@@ -29,6 +29,7 @@ const About = (
 							imgSrc={president.imgSrc}
 							imgAlt={president.imgAlt}
 							name={president.name}
+							pronouns={president.pronouns}
 						>
 							{
 								// Split president descriptions by newlines to delimit new paragraphs
@@ -49,6 +50,7 @@ const About = (
 							imgAlt={director.imgAlt}
 							description={director.description}
 							name={director.name}
+							pronouns={director.pronouns}
 						/>
 					))}
 				</div>

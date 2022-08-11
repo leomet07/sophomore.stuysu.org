@@ -13,6 +13,7 @@ export interface ReceivedProfile {
 	description: string;
 	president: boolean;
 	name: string;
+	pronouns: string;
 }
 export interface ReceivedPolicy {
 	_id: mongoObjectId;

@@ -26,6 +26,7 @@
 .description {
 	font-family: "Manrope", "Arial", sans-serif;
 	font-size: 1.5rem;
+	margin-top: 1vh;
 }
 .profile_info {
 	width: 100%;
@@ -35,8 +36,12 @@
 	font-size: 2rem;
 }
 
+.profile_pronouns {
+	font-size: 1.35rem;
+}
+
 .description p {
-	padding-bottom: 3vh;
+	padding-bottom: 1vh;
 }
 
 @media (max-width: 900px) {
