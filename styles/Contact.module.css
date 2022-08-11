@@ -17,6 +17,16 @@
 	color: var(--primary-color);
 	z-index: 5;
 	position: sticky;
+	animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(90%);
+    }
+    100% {
+        transform: translateX(-90%);
+    }
 }
 
 #lets_talk {
