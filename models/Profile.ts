@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 const ProfileSchema = new mongoose.Schema({
-    imgSrc: String,
-    imgAlt: String,
-    description: String,
-    president: Boolean,
+	imgSrc: String,
+	imgAlt: String,
+	description: String,
+	president: Boolean,
+	name: String,
 });
 const ProfileModel =
-    mongoose.models.Profile ||
-    mongoose.model("Profile", ProfileSchema);
+	mongoose.models.Profile || mongoose.model("Profile", ProfileSchema);
 
 export default ProfileModel;

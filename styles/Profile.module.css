@@ -24,9 +24,15 @@
 }
 
 .description {
-	width: 100%;
 	font-family: "Manrope", "Arial", sans-serif;
 	font-size: 1.5rem;
+}
+.profile_info {
+	width: 100%;
+}
+
+.profile_name {
+	font-size: 2rem;
 }
 
 .description p {
