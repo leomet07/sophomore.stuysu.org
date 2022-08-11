@@ -45,7 +45,7 @@ a {
 }
 
 .dark-mode {
-	--primary-color: white;
+	--primary-color: #E0E0E0;
 	--secondary-color: black;
 	--tertiary-color: #cfd1d1;
 
