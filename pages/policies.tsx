@@ -6,6 +6,7 @@ import { ReceivedPolicy } from "../types/db_types";
 import getServerUrl from "../lib/getServerUrl";
 import { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
+import GradientTitle from "../components/GradientTitle";
 
 const Policies = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -21,7 +22,7 @@ const Policies = (
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>OUR POLICIES</h1>
+				<h1 className={styles.title}>OUR <GradientTitle>POLICIES</GradientTitle></h1>
 				<div id={styles.internal_container}>
 					<div id={styles.nav_container}>
 						<nav id={styles.nav}>

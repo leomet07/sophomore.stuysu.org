@@ -9,6 +9,7 @@ import { ReceivedAnnouncement } from "../types/db_types";
 import getServerUrl from "../lib/getServerUrl";
 import { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
+import GradientTitle from "../components/GradientTitle";
 
 const Home = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -34,7 +35,7 @@ const Home = (
 			<main className={styles.main}>
 				<h1 className={styles.title}>
 					SOPHOMORE CAUCUS&nbsp;
-					<span className={styles.bolded_insert}>&lsquo;22</span>
+					<GradientTitle>&lsquo;22</GradientTitle>
 				</h1>
 				<section id={styles.schedule_widget}>
 					<ScheduleWidget />
