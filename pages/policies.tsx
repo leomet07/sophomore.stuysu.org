@@ -6,7 +6,7 @@ import { ReceivedPolicy } from "../types/db_types";
 import getServerUrl from "../lib/getServerUrl";
 import { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
-import { GradientTitle } from "../components/Gradient";
+import { GradientBorderShadow, GradientTitle } from "../components/Gradient";
 
 const Policies = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -26,15 +26,18 @@ const Policies = (
 				<div id={styles.internal_container}>
 					<div id={styles.nav_container}>
 						<nav id={styles.nav}>
-							<div className={styles.category}>
+							<GradientBorderShadow className={styles.category}>
+								<div className={styles.background} />
 								<span>Flexibility</span>
-							</div>
-							<div className={styles.category}>
+							</GradientBorderShadow>
+							<GradientBorderShadow className={styles.category}>
+								<div className={styles.background} />
 								<span>Inclusion</span>
-							</div>
-							<div className={styles.category}>
+							</GradientBorderShadow>
+							<GradientBorderShadow className={styles.category}>
+								<div className={styles.background} />
 								<span>Events</span>
-							</div>
+							</GradientBorderShadow>
 						</nav>
 					</div>
 					<section id={styles.policies_container}>

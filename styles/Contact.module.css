@@ -55,12 +55,7 @@
 
 	margin: auto;
 
-	/* Base [day] */
-	background: var(--base-color);
-
-	/* Prim [day] */
-	border: 1px solid var(--secondary-color);
-	border-radius: 52px;
+	border-radius: 10px;
 	z-index: 2;
 }
 #lets_talk p {
