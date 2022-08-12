@@ -6,6 +6,9 @@ const Profile = (props: {
 	imgSrc: string;
 	imgAlt: string;
 	children: ReactNode;
+	name: string;
+	pronouns: string;
+	role: string;
 }) => {
 	/*
 	 * imgSrc: URI to an image (of 1:1 aspect ratio) representing the profile
@@ -17,7 +20,12 @@ const Profile = (props: {
 			<div className={styles.image}>
 				<Image src={props.imgSrc} alt={props.imgAlt} layout="fill" />
 			</div>
-			<div className={styles.description}> {props.children} </div>
+			<div className={styles.profile_info}>
+				<h1 className={styles.profile_name}>{props.name}</h1>
+				<p className={styles.profile_role}>{props.role}</p>
+				<p className={styles.profile_pronouns}>{props.pronouns}</p>
+				<div className={styles.description}> {props.children} </div>
+			</div>
 		</div>
 	);
 };
@@ -26,6 +34,9 @@ const Director = (props: {
 	imgSrc: string;
 	imgAlt: string;
 	description: string;
+	name: string;
+	pronouns: string;
+	role: string;
 }) => {
 	/*
 	 * Subclass/Wrapper around <Profile> to apply specific Director card styling
@@ -36,7 +47,13 @@ const Director = (props: {
 	 */
 	return (
 		<div className={styles.director}>
-			<Profile imgSrc={props.imgSrc} imgAlt={props.imgAlt}>
+			<Profile
+				imgSrc={props.imgSrc}
+				imgAlt={props.imgAlt}
+				name={props.name}
+				pronouns={props.pronouns}
+				role={props.role}
+			>
 				<p> {props.description} </p>
 			</Profile>
 		</div>

@@ -6,6 +6,7 @@
 	align-items: center;
 	justify-items: center;
 	padding-bottom: 10vh;
+	padding: 30px;
 }
 
 .director .profile {
@@ -25,18 +26,28 @@
 .description {
 	font-family: "Manrope", "Arial", sans-serif;
 	font-size: 1.5rem;
-	font-weight: 400;
-	line-height: 150%;
-
-	text-align: justify;
-	letter-spacing: 0.06em;
+	margin-top: 1vh;
+}
+.profile_info {
+	width: 100%;
 }
 
+.profile_name {
+	font-size: 2rem;
+}
+
+.profile_pronouns {
+	font-size: 1.35rem;
+}
+.profile_role {
+	font-size: 1.35rem;
+	font-weight: bold;
+}
 .description p {
-	padding-bottom: 3vh;
+	padding-bottom: 1vh;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 	.profile,
 	.director .profile {
 		display: grid;
@@ -49,10 +60,7 @@
 		padding-bottom: 0;
 	}
 	.description {
-		padding-top: 5%;
-		padding-right: 3.5vw;
-		padding-left: 3.5vw;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 
 	.image,
@@ -60,5 +68,7 @@
 		height: 80vw;
 		width: 80vw;
 		padding-bottom: 0;
+		max-width: 300px;
+		max-height: 300px;
 	}
 }

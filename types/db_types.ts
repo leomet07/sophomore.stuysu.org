@@ -12,6 +12,9 @@ export interface ReceivedProfile {
 	imgAlt: string;
 	description: string;
 	president: boolean;
+	name: string;
+	pronouns: string;
+	role: string;
 }
 export interface ReceivedPolicy {
 	_id: mongoObjectId;
