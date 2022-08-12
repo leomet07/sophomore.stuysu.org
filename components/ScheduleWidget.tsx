@@ -1,14 +1,11 @@
 import styles from "../styles/ScheduleWidget.module.css";
+import { GradientPill } from "./Gradient";
 
 const ScheduleWidget = () => {
 	return (
 		<div id={styles.container}>
-			<div className={styles.pill} id={styles.schedule_type}>
-				<span>Regular</span>
-			</div>
-			<div className={styles.pill} id={styles.current_time}>
-				<span>12:23 PM</span>
-			</div>
+			<GradientPill title="Regular" id={styles.schedule_type} />
+			<GradientPill title="12:23 PM" id={styles.current_time} />
 			<div id={styles.schedule_widget}>
 				<div className={styles.bottom}>
 					<p>

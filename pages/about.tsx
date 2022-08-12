@@ -6,7 +6,7 @@ import { ReceivedProfile } from "../types/db_types";
 import { GetServerSidePropsContext } from "next";
 import type { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
-import GradientTitle from "../components/GradientTitle";
+import { GradientTitle } from "../components/Gradient";
 
 const About = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>

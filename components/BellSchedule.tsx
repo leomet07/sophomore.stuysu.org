@@ -2,6 +2,7 @@
 
 import styles from "../styles/BellSchedule.module.css";
 import { useState, useEffect } from "react";
+import { GradientPill } from "./Gradient";
 
 const BellSchedule = () => {
 	const [width, setWidth] = useState(0);
@@ -36,9 +37,7 @@ const BellSchedule = () => {
 	return (
 		<div className={visibility ? "" : styles.hidden}>
 			<div id={styles.bell_schedule_parent}>
-				<div id={styles.label} onClick={handleOnClick}>
-					<span>Bell Schedule</span>
-				</div>
+				<GradientPill title="Bell Schedule" id={styles.label} onClick={handleOnClick} />
 				{visibility ? (
 					<div id={styles.bell_schedule}>
 						<div id={styles.schedule_container}>

@@ -6,7 +6,7 @@ import { ReceivedPolicy } from "../types/db_types";
 import getServerUrl from "../lib/getServerUrl";
 import { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
-import GradientTitle from "../components/GradientTitle";
+import { GradientTitle } from "../components/Gradient";
 
 const Policies = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>

@@ -2,6 +2,7 @@
 
 import styles from "../styles/WeeklySchedule.module.css";
 import { useState, useEffect } from "react";
+import { GradientPill } from "./Gradient";
 
 const WeeklySchedule = () => {
 	const [width, setWidth] = useState(0);
@@ -36,9 +37,7 @@ const WeeklySchedule = () => {
 	return (
 		<div className={visibility ? "" : styles.hidden}>
 			<div id={styles.weekly_schedule_parent}>
-				<div id={styles.label} onClick={handleOnClick}>
-					<span>This Week @ Stuy</span>
-				</div>
+				<GradientPill title="This Week @ Stuy" id={styles.label} onClick={handleOnClick} />
 				{visibility ? (
 					<div id={styles.weekly_schedule_box}>
 						<div id={styles.weekly_schedule}>
