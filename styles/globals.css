@@ -8,9 +8,11 @@
 	font-family: var(--main-font);
 
 	/**** theming variables ****/
+	--base-color: white;
 	--primary-color: black;
-	--secondary-color: white;
-	--tertiary-color: #302e2e;  /* name tentative, open to refactor */
+	--secondary-color: #B0B0B0;
+	--tertiary-color: #D2D2D2;
+	--gradient-purple: linear-gradient(180deg, #D100B0 0%, #752DC0 100%);
 
 	/* assuming all assets are black for light mode by default */
 	--asset-filter: none;
@@ -27,7 +29,7 @@ body {
 	color: var(--primary-color);
 
 	/* breaks negative z-index elements, so only use z-indices >= 0 */
-	background-color: var(--secondary-color);
+	background-color: var(--base-color);
 }
 
 a {
@@ -45,9 +47,10 @@ a {
 }
 
 .dark-mode {
-	--primary-color: #E0E0E0;
-	--secondary-color: black;
-	--tertiary-color: #cfd1d1;
+	--base-color: #0A0A0A;
+	--primary-color: #E9E9E9;
+	--secondary-color: #4B4B4B;
+	--tertiary-color: #141414;
 
 	/* it's ok to have a little invert, not the whole page */
 	--asset-filter: invert();

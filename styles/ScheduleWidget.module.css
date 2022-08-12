@@ -14,7 +14,7 @@
 }
 
 .pill {
-	background-color: var(--secondary-color);
+	background-color: var(--base-color);
 	border: 1px solid var(--primary-color);
 	border-radius: 30px;
 	width: fit-content;
@@ -37,9 +37,7 @@
 	height: 180px;
 	border: 1px solid var(--primary-color);
 	border-radius: 10px;
-	padding: 12px;
-	padding-right: 20px;
-	padding-left: 20px;
+	padding: 12px 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
