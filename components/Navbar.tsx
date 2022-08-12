@@ -20,11 +20,20 @@ const Navbar = () => {
 				</a>
 			</Link>
 			<div id={styles.links_container}>
-				<div className={styles.toggle} onClick={() =>
-				{
-					localStorage.setItem("dark-mode", (document.documentElement.classList.contains('dark-mode') ? 'light' : 'dark'));
-					document.dispatchEvent(new Event("storage"));
-				}}>
+				<div
+					className={styles.toggle}
+					onClick={() => {
+						localStorage.setItem(
+							"dark-mode",
+							document.documentElement.classList.contains(
+								"dark-mode"
+							)
+								? "light"
+								: "dark"
+						);
+						document.dispatchEvent(new Event("storage"));
+					}}
+				>
 					<div className={styles.sun}>
 						<Image alt="" src={sunImg} />
 					</div>
