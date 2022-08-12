@@ -18,16 +18,19 @@
 	color: var(--primary-color);
 	z-index: 5;
 	position: sticky;
-	animation: scroll-left 20s linear infinite;
+	animation: scroll-around 15s linear infinite;
 }
 
-@keyframes scroll-left {
-    0% {
-        transform: translateX(90%);
-    }
-    100% {
-        transform: translateX(-90%);
-    }
+@keyframes scroll-around {
+	0% {
+		transform: translateX(0%);
+	}
+	25% {
+		transform: translateX(45%);
+	}
+	75% {
+		transform: translateX(-45%);
+	}
 }
 
 .prompt {
