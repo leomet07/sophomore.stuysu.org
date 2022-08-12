@@ -1,11 +1,12 @@
 .main {
-	height: min-content;
+	height: calc(100vh - 70px);
 	width: 100vw;
 	overflow-x: hidden;
 }
 
 .title {
 	padding-top: 2vh;
+	line-height: 16.35vw;
 	padding-bottom: 5vh;
 
 	font-family: "Manrope", "Arial", sans-serif;
@@ -17,6 +18,23 @@
 	color: var(--primary-color);
 	z-index: 5;
 	position: sticky;
+	animation: scroll-around 15s linear infinite;
+}
+
+@keyframes scroll-around {
+	0% {
+		transform: translateX(0%);
+	}
+	25% {
+		transform: translateX(45%);
+	}
+	75% {
+		transform: translateX(-45%);
+	}
+}
+
+.prompt {
+	position: relative;
 }
 
 #lets_talk {
@@ -39,7 +57,7 @@
 	/* Prim [day] */
 	border: 1px solid var(--primary-color);
 	border-radius: 52px;
-	z-index: 1;
+	z-index: 2;
 }
 #lets_talk p {
 	font-family: "Manrope", "Arial", sans-serif;
@@ -51,17 +69,25 @@
 }
 
 .limiter {
+	position: absolute;
+	top: 35%;
 	width: 100vw;
+	min-height: 300px;
+	height: calc(100vh - 60px - 7vh - 5rem - 10vw);
+	background-color: var(--secondary-color);
+
 	overflow-y: clip;
-	overflow-x: hidden;
+	overflow-x: clip;
+	z-index: 1;
 }
 
 .circle {
 	z-index: 0;
-	height: 55vh;
-	width: 100vw;
-	position: fixed;
-	bottom: 0;
+	height: max(75vw, 100vh);
+	width: 150vw;
+	position: absolute;
+	top: 0;
+	left: -25vw;
 	border-top-left-radius: 120vw;
 	border-top-right-radius: 120vw;
 	/* Prim [day] */
@@ -116,19 +142,17 @@
 		position: fixed;
 		bottom: 0;
 		width: 100vw;
-		height: 31vh; /* 1 extra to avoid a seam */
+		height: 30vh;
 		background-color: var(--tertiary-color);
 		z-index: 0;
-	}
-	.circle {
-		bottom: 30vh;
-		height: 45vh;
 	}
 	.buttons {
 		width: 90vw;
 		z-index: 1;
 	}
 	#feedback {
+		margin-left: 5vw;
+		margin-right: 5vw;
 		z-index: 1;
 	}
 }
