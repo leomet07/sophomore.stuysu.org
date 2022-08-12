@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import Script from "next/script";
 import Head from "next/head";
 
@@ -41,6 +42,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 			</div>
 			<div id="main_parent">
 				<Component {...pageProps} />
+			</div>
+			<div id="footer_parent">
+				<Footer />
 			</div>
 		</>
 	);

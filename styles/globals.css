@@ -10,7 +10,7 @@
 	/**** theming variables ****/
 	--primary-color: black;
 	--secondary-color: white;
-	--tertiary-color: #302e2e;  /* name tentative, open to refactor */
+	--tertiary-color: #302e2e; /* name tentative, open to refactor */
 
 	/* assuming all assets are black for light mode by default */
 	--asset-filter: none;
@@ -42,10 +42,16 @@ a {
 }
 #navbar_parent {
 	margin-top: 15px;
+	height: 55px;
 }
-
+#main_parent {
+	min-height: calc(100vh - 55px);
+}
+#footer_parent {
+	margin-top: 10px;
+}
 .dark-mode {
-	--primary-color: #E0E0E0;
+	--primary-color: #e0e0e0;
 	--secondary-color: black;
 	--tertiary-color: #cfd1d1;
 
