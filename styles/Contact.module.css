@@ -59,7 +59,7 @@
 	background: var(--base-color);
 
 	/* Prim [day] */
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--secondary-color);
 	border-radius: 52px;
 	z-index: 2;
 }

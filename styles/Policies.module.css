@@ -57,7 +57,7 @@
 
 .category {
 	font-size: 1.3rem;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--secondary-color);
 	border-radius: 20px;
 	padding-right: 15px;
 	padding-left: 15px;
