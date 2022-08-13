@@ -45,6 +45,7 @@ a {
 #navbar_parent {
 	margin-top: 15px;
 	height: 55px;
+	height: 55px;
 }
 #main_parent {
 	min-height: calc(100vh - 55px);
