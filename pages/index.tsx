@@ -5,7 +5,11 @@ import Announcement from "../components/Announcement";
 import ScheduleWidget from "../components/ScheduleWidget";
 import BellSchedule from "../components/BellSchedule";
 import WeeklySchedule from "../components/WeeklySchedule";
-import { ReceivedAnnouncement, ReceivedSchedule } from "../types/db_types";
+import {
+	ReceivedAnnouncement,
+	ReceivedDay,
+	ReceivedSchedule,
+} from "../types/db_types";
 import getServerUrl from "../lib/getServerUrl";
 import { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
@@ -22,6 +26,7 @@ const Home = (
 			.split(",")[0];
 	};
 	console.log("Server url", props.serverUrl);
+	console.log("Week schedule infos in client: ", props.week_schedule_infos);
 
 	const current_schedule_name = props.current_schedule; // Hardcoded
 	const current_schedule: ReceivedSchedule =
@@ -76,6 +81,7 @@ type getMainPageResponse = {
 	announcements: ReceivedAnnouncement[];
 	schedules: ReceivedSchedule[];
 	current_schedule: string;
+	week_schedule_infos: ReceivedDay[];
 };
 
 export const getServerSideProps = async (
@@ -89,6 +95,7 @@ export const getServerSideProps = async (
 			announcements: mainpage_json.announcements,
 			schedules: mainpage_json.schedules,
 			current_schedule: mainpage_json.current_schedule,
+			week_schedule_infos: mainpage_json.week_schedule_infos,
 			serverUrl: getServerUrl(),
 		},
 	};

@@ -2,7 +2,11 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "../../lib/dbConnect";
 import Schedule from "../../models/Schedule";
 import Announcement from "../../models/Announcement";
-import { ReceivedSchedule, ReceivedAnnouncement } from "../../types/db_types";
+import {
+	ReceivedSchedule,
+	ReceivedAnnouncement,
+	ReceivedDay,
+} from "../../types/db_types";
 import get_bell_schedule_by_date from "../../lib/get_bell_schedule_by_date";
 
 type ReponseData = {
@@ -10,12 +14,7 @@ type ReponseData = {
 	schedules?: ReceivedSchedule[];
 	announcements?: ReceivedAnnouncement[];
 	current_schedule?: string;
-	week_schedule_infos?: WeekScheduleInfo[];
-};
-
-type WeekScheduleInfo = {
-	date: string;
-	bell_schedule_type: string;
+	week_schedule_infos?: ReceivedDay[];
 };
 
 function get_week(start: string) {
@@ -57,7 +56,7 @@ export default async function handler(
 	const start_date = get_first_day(today);
 	const week_dates = get_week(start_date);
 
-	const week_schedule_infos: WeekScheduleInfo[] = [];
+	const week_schedule_infos: ReceivedDay[] = [];
 	for (let i = 0; i < week_dates.length; i++) {
 		const current_week_date = week_dates[i];
 		const current_week_date_schedule = await get_bell_schedule_by_date(
