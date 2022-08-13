@@ -24,3 +24,13 @@ export interface ReceivedPolicy {
 	why?: string;
 	how?: string;
 }
+
+export interface ReceivedSchedule {
+	name: string;
+	segments: ScheduleSegment[];
+}
+interface ScheduleSegment {
+	start: string;
+	end: string;
+	name: string;
+}
