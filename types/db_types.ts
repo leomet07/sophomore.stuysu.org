@@ -35,3 +35,9 @@ interface ScheduleSegment {
 	end: string;
 	name: string;
 }
+
+export interface ReceivedDay {
+	_id: mongoObjectId;
+	date: string;
+	bell_schedule_type: string;
+}
