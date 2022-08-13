@@ -44,8 +44,14 @@ a {
 }
 #navbar_parent {
 	margin-top: 15px;
+	height: 55px;
 }
-
+#main_parent {
+	min-height: calc(100vh - 55px);
+}
+#footer_parent {
+	margin-top: 10px;
+}
 .dark-mode {
 	--base-color: #0A0A0A;
 	--primary-color: #E9E9E9;
