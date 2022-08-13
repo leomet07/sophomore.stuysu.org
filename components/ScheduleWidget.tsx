@@ -1,10 +1,17 @@
 import styles from "../styles/ScheduleWidget.module.css";
 import { GradientPill, GradientShadow } from "./Gradient";
+import { ReceivedSchedule } from "../types/db_types";
 
-const ScheduleWidget = () => {
+const ScheduleWidget = (props: {
+	current_schedule: ReceivedSchedule;
+	current_schedule_name: string;
+}) => {
 	return (
 		<div id={styles.container}>
-			<GradientPill title="Regular" id={styles.schedule_type} />
+			<GradientPill
+				title={props.current_schedule_name}
+				id={styles.schedule_type}
+			/>
 			<GradientPill title="12:23 PM" id={styles.current_time} />
 			<GradientShadow id={styles.schedule_widget}>
 				<div className={styles.bottom}>

@@ -44,7 +44,10 @@ const Home = (
 					<GradientTitle>&lsquo;22</GradientTitle>
 				</h1>
 				<section id={styles.schedule_widget}>
-					<ScheduleWidget />
+					<ScheduleWidget
+						current_schedule_name={current_schedule_name}
+						current_schedule={current_schedule}
+					/>
 				</section>
 				<section id={styles.schedule_information}>
 					<div id={styles.bell_schedule_container}>
