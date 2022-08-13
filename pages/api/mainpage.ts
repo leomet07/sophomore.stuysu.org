@@ -8,6 +8,7 @@ import {
 	ReceivedDay,
 } from "../../types/db_types";
 import get_bell_schedule_by_date from "../../lib/get_bell_schedule_by_date";
+import { Types } from "mongoose";
 
 type ReponseData = {
 	success: boolean;
@@ -74,14 +75,24 @@ export default async function handler(
 					{}
 				)) as ReceivedSchedule[];
 
-				let db_announcements = (await Announcement.find(
-					{}
-				)) as ReceivedAnnouncement[];
+				let db_announcements = (await Announcement.find({})) as any[];
+
+				let announcements = db_announcements.map((v) => {
+					const objid = new Types.ObjectId(v._id);
+
+					// The timezone is actually US eastern (where the DB server is located), .getTimestamp() gets it as UTC
+					const rdate = objid.getTimestamp();
+
+					let newv = v.toObject();
+					newv.date = rdate;
+
+					return newv;
+				}) as ReceivedAnnouncement[];
 
 				res.status(200).json({
 					success: true,
 					schedules: db_schedules,
-					announcements: db_announcements,
+					announcements: announcements,
 					current_schedule: today_schedule,
 					week_schedule_infos: week_schedule_infos,
 				});
