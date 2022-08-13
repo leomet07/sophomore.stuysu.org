@@ -51,7 +51,6 @@ export default async function handler(
 		timeZone: "US/Eastern",
 	});
 	const today_schedule = await get_bell_schedule_by_date(today);
-	console.log("Today schedule: ", today_schedule);
 
 	const start_date = get_first_day(today);
 	const week_dates = get_week(start_date);
