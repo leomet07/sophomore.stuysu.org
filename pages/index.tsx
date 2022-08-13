@@ -68,43 +68,24 @@ const Home = (
 	);
 };
 
-type getAnnouncementsResponse = {
+type getMainPageResponse = {
 	success: boolean;
-	data: ReceivedAnnouncement[];
-};
-type getSchedulesResponse = {
-	success: boolean;
-	data: ReceivedSchedule[];
-};
-type getCurrentScheduleResponse = {
-	success: boolean;
+	announcements: ReceivedAnnouncement[];
+	schedules: ReceivedSchedule[];
 	current_schedule: string;
 };
+
 export const getServerSideProps = async (
 	context: GetServerSidePropsContext
 ) => {
-	const announcements_request: any = await fetch(
-		getServerUrl() + "/api/get_announcements"
-	);
-	const announcements_json: getAnnouncementsResponse =
-		await announcements_request.json();
-
-	const schedules_request: any = await fetch(
-		getServerUrl() + "/api/get_schedules"
-	);
-	const schedules_json: getSchedulesResponse = await schedules_request.json();
-
-	const current_schedule_request: any = await fetch(
-		getServerUrl() + "/api/get_current_schedule"
-	);
-	const current_schedule_json: getCurrentScheduleResponse =
-		await current_schedule_request.json();
+	const mainpage_request: any = await fetch(getServerUrl() + "/api/mainpage");
+	const mainpage_json: getMainPageResponse = await mainpage_request.json();
 
 	return {
 		props: {
-			announcements: announcements_json.data,
-			schedules: schedules_json.data,
-			current_schedule: current_schedule_json.current_schedule,
+			announcements: mainpage_json.announcements,
+			schedules: mainpage_json.schedules,
+			current_schedule: mainpage_json.current_schedule,
 			serverUrl: getServerUrl(),
 		},
 	};
