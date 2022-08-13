@@ -58,4 +58,30 @@ const GradientBorderShadow = (props: {id?: string, className?: string, onClick?:
     )
 }
 
-export { GradientTitle, GradientPill, GradientBorder, GradientShadow, GradientBorderShadow };
+const GradientButton = (props: {id?: string, className?: string, href?: string, autofocus?: boolean, onClick?: MouseEventHandler, children: ReactNode}) => {
+    /*
+     * Reusable template <a> div for making gradient-bordered and shadowed elements with a :hover animation and :focus state.
+     *
+     * Takes in extra className(s) for external styling,
+     * which users should take care to also implement :hover and :focus states for to
+     * avoid readability issues with the background,
+     * and transition with a 0.35s duration to remain in sync with the button.
+     *
+     * Note that (auto)focus needs to be implemented using React state functionality, so for simplicity, it is not included here.
+     *
+     * Padding should be applied to the text children to avoid breaking the border clipping.
+     * Optionally takes in a href to point to something else (or just to use the fragment as a state tracker)
+     */
+    return (
+        <a className={`${styles.border} ${styles.shadow} ${props.className}`}
+           id={props.id}
+           onClick={props.onClick}
+           href={(props.href) ? props.href : '#'}
+        >
+            <div className={styles.background} />
+            {props.children}
+        </a>
+    )
+}
+
+export { GradientTitle, GradientPill, GradientBorder, GradientShadow, GradientBorderShadow, GradientButton };

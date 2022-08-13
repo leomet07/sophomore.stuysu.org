@@ -21,6 +21,7 @@
     background-image: linear-gradient(var(--base-color), var(--base-color)), var(--gradient-purple);
     background-origin: border-box;
     background-clip: content-box, border-box;
+    overflow: hidden;
 }
 
 .pill {
@@ -37,4 +38,26 @@
     font-size: 1.3rem;
     padding-right: 25px;
     padding-left: 25px;
+}
+
+/* GradientButton background element styles/transition */
+.border .background {
+    position: absolute;
+    width: 150%;
+    height: 0;
+    padding-bottom: 150%;
+    top: 200%;
+    left: -25%;
+    border-radius: 50%;
+    z-index: 0;
+    background-image: var(--gradient-purple);
+    transition: top 0.5s;
+    text-decoration: none;
+}
+.border:hover .background {
+    top: -250%;
+}
+.border:focus .background {
+    top: -300%;
+    transition: top 0s;
 }

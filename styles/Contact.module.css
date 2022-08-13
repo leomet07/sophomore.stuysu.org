@@ -65,6 +65,12 @@
 	text-align: center;
 	/* Prim [day] */
 	color: var(--primary-color);
+	z-index: 0;
+	transition: color 0.5s;
+}
+#lets_talk:focus p,
+#lets_talk:hover p {
+	color: var(--base-color);
 }
 
 .limiter {
