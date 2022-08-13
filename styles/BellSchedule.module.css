@@ -4,17 +4,15 @@
 	flex-direction: column;
 	justify-content: space-between;
 	padding-top: 20px;
-	height: calc(fit-content + 20px);
+	height: fit-content;
 }
 
 #bell_schedule {
 	height: 330px;
-	padding: 20px;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding: 30px 20px;
 	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
-	margin-top: 0px;
+	margin-top: 0;
 }
 
 #label {
@@ -48,7 +46,7 @@
 }
 
 .hidden #bell_schedule {
-	height: 0px;
+	height: 0;
 }
 
 @media (max-width: 1130px) {
@@ -59,8 +57,8 @@
 	#left {
 		display: block;
 		height: fit-content;
-		margin-top: 0px;
-		margin-left: 0px;
+		margin-top: 0;
+		margin-left: 0;
 	}
 
 	#right p,
@@ -74,13 +72,13 @@
 
 	#schedule_container p:last-child {
 		/* For the safari bug */
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 	#bell_schedule {
 		height: fit-content;
 		padding-top: 20px;
 		padding-bottom: 20px;
-		margin-top: 0px;
+		margin-top: 0;
 	}
 
 	#label {

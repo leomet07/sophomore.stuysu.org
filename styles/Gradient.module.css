@@ -4,6 +4,7 @@
      * `text` only works on chromium under `-webkit-background-clip`
      * which next implicitly adds as a compatibility alias
      */
+    /* noinspection CssInvalidPropertyValue */
     background-clip: text;
     color: transparent;
     font-weight: bold;

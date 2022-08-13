@@ -4,7 +4,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	padding-top: 20px;
-	height: calc(fit-content + 20px);
+	height: fit-content;
 }
 
 #label {
@@ -19,13 +19,12 @@
 #weekly_schedule_box {
 	height: 330px;
 	padding-top: 20px;
-	margin-top: auto;
 	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin-top: 0px;
+	margin-top: 0;
 }
 #special_news_container {
 	height: 70px;
@@ -61,7 +60,7 @@
 }
 
 .hidden #weekly_schedule_box {
-	height: 0px;
+	height: 0;
 }
 @media (max-width: 1130px) {
 	#label {
