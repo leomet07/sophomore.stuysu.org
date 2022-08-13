@@ -55,12 +55,7 @@
 
 	margin: auto;
 
-	/* Base [day] */
-	background: var(--secondary-color);
-
-	/* Prim [day] */
-	border: 1px solid var(--primary-color);
-	border-radius: 52px;
+	border-radius: 10px;
 	z-index: 2;
 }
 #lets_talk p {
@@ -78,7 +73,7 @@
 	width: 100vw;
 	min-height: 300px;
 	height: calc(100vh - 60px - 7vh - 5rem - 10vw);
-	background-color: var(--secondary-color);
+	background-color: var(--base-color);
 
 	overflow-y: clip;
 	overflow-x: clip;
@@ -134,7 +129,7 @@
 	letter-spacing: 0.06em;
 
 	/* Base [day] */
-	color: var(--secondary-color);
+	color: var(--primary-color);
 }
 
 #feedback a {

@@ -1,0 +1,40 @@
+.title {
+    background: var(--gradient-purple);
+    /*
+     * `text` only works on chromium under `-webkit-background-clip`
+     * which next implicitly adds as a compatibility alias
+     */
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.shadow {
+    /* Glow */
+    box-shadow: 0 10px 60px rgba(120, 0, 205, 0.49),
+    0 2px 12px rgba(120, 0, 205, 0.292093),
+    0 1px 5px rgba(120, 0, 205, 0.197907);
+}
+
+.border {
+    border: double 1px transparent;
+    background-image: linear-gradient(var(--base-color), var(--base-color)), var(--gradient-purple);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.pill {
+    border-radius: 10px;
+    width: fit-content;
+    height: 40px;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pill span {
+    font-size: 1.3rem;
+    padding-right: 25px;
+    padding-left: 25px;
+}

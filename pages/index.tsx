@@ -5,10 +5,15 @@ import Announcement from "../components/Announcement";
 import ScheduleWidget from "../components/ScheduleWidget";
 import BellSchedule from "../components/BellSchedule";
 import WeeklySchedule from "../components/WeeklySchedule";
-import { ReceivedAnnouncement } from "../types/db_types";
+import {
+	ReceivedAnnouncement,
+	ReceivedDay,
+	ReceivedSchedule,
+} from "../types/db_types";
 import getServerUrl from "../lib/getServerUrl";
 import { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
+import { GradientTitle } from "../components/Gradient";
 
 const Home = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -21,6 +26,12 @@ const Home = (
 			.split(",")[0];
 	};
 	console.log("Server url", props.serverUrl);
+
+	const current_schedule_name = props.current_schedule; // Hardcoded
+	const current_schedule: ReceivedSchedule =
+		props.schedules.find((v) => v.name == current_schedule_name) ||
+		props.schedules[0];
+
 	return (
 		<>
 			<Head>
@@ -34,17 +45,22 @@ const Home = (
 			<main className={styles.main}>
 				<h1 className={styles.title}>
 					SOPHOMORE CAUCUS&nbsp;
-					<span className={styles.bolded_insert}>&lsquo;22</span>
+					<GradientTitle>&lsquo;22</GradientTitle>
 				</h1>
 				<section id={styles.schedule_widget}>
-					<ScheduleWidget />
+					<ScheduleWidget
+						current_schedule_name={current_schedule_name}
+						current_schedule={current_schedule}
+					/>
 				</section>
 				<section id={styles.schedule_information}>
 					<div id={styles.bell_schedule_container}>
-						<BellSchedule />
+						<BellSchedule current_schedule={current_schedule} />
 					</div>
 					<div id={styles.weekly_schedule_container}>
-						<WeeklySchedule />
+						<WeeklySchedule
+							week_schedule_infos={props.week_schedule_infos}
+						/>
 					</div>
 				</section>
 				<section id={styles.announcements}>
@@ -61,18 +77,29 @@ const Home = (
 	);
 };
 
-type getAnnouncementsResponse = {
+type getMainPageResponse = {
 	success: boolean;
-	data: ReceivedAnnouncement[];
-	serverUrl: string;
+	announcements: ReceivedAnnouncement[];
+	schedules: ReceivedSchedule[];
+	current_schedule: string;
+	week_schedule_infos: ReceivedDay[];
 };
 
 export const getServerSideProps = async (
 	context: GetServerSidePropsContext
 ) => {
-	const r: any = await fetch(getServerUrl() + "/api/get_announcements");
-	const data: getAnnouncementsResponse = await r.json();
-	return { props: { announcements: data.data, serverUrl: getServerUrl() } };
+	const mainpage_request: any = await fetch(getServerUrl() + "/api/mainpage");
+	const mainpage_json: getMainPageResponse = await mainpage_request.json();
+
+	return {
+		props: {
+			announcements: mainpage_json.announcements,
+			schedules: mainpage_json.schedules,
+			current_schedule: mainpage_json.current_schedule,
+			week_schedule_infos: mainpage_json.week_schedule_infos,
+			serverUrl: getServerUrl(),
+		},
+	};
 };
 
 export default Home;

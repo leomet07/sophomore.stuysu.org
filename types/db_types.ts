@@ -24,3 +24,20 @@ export interface ReceivedPolicy {
 	why?: string;
 	how?: string;
 }
+
+export interface ReceivedSchedule {
+	_id: mongoObjectId;
+	name: string;
+	segments: ScheduleSegment[];
+}
+interface ScheduleSegment {
+	start: string;
+	end: string;
+	name: string;
+}
+
+export interface ReceivedDay {
+	_id?: mongoObjectId;
+	date: string;
+	bell_schedule_type: string;
+}

@@ -6,6 +6,7 @@ import { ReceivedProfile } from "../types/db_types";
 import { GetServerSidePropsContext } from "next";
 import type { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
+import { GradientTitle } from "../components/Gradient";
 
 const About = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -21,7 +22,7 @@ const About = (
 				<meta name="description" content="About the Sophomore Caucus" />
 			</Head>
 			<main className={styles.main}>
-				<h1 className={styles.title}>ABOUT US</h1>
+				<h1 className={styles.title}>ABOUT <GradientTitle>US</GradientTitle></h1>
 				<div className={styles.presidents}>
 					{presidents.map((president) => (
 						<Profile

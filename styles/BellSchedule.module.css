@@ -12,31 +12,14 @@
 	padding: 20px;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
 	margin-top: 0px;
 }
 
 #label {
-	background-color: var(--secondary-color);
-	border: 1px solid var(--primary-color);
-	border-radius: 30px;
-	width: fit-content;
-	height: 40px;
-	position: absolute;
-	z-index: 3;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-left: 3vw;
+	margin-left: 1.9vw;
 	margin-top: -20px;
-	padding: 20px;
-	padding-right: 25px;
-	padding-left: 25px;
-}
-
-#label span {
-	font-size: 1.3rem;
 }
 
 #schedule_container {
@@ -94,7 +77,7 @@
 		margin-bottom: 0px;
 	}
 	#bell_schedule {
-		height: 500px;
+		height: fit-content;
 		padding-top: 20px;
 		padding-bottom: 20px;
 		margin-top: 0px;
@@ -102,5 +85,6 @@
 
 	#label {
 		cursor: pointer;
+		margin-left: 3vw;
 	}
 }

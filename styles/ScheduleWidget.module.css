@@ -10,36 +10,16 @@
 	margin-left: 2vw;
 }
 #current_time {
-	margin-left: calc(3vw + 150px);
-}
-
-.pill {
-	background-color: var(--secondary-color);
-	border: 1px solid var(--primary-color);
-	border-radius: 30px;
-	width: fit-content;
-	height: 40px;
-	position: absolute;
-	z-index: 3;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-right: 25px;
-	padding-left: 25px;
-}
-.pill span {
-	font-size: 1.3rem;
+	margin-left: calc(3vw + 160px);
 }
 
 #schedule_widget {
 	margin-top: auto;
 	width: 100%;
 	height: 180px;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
-	padding: 12px;
-	padding-right: 20px;
-	padding-left: 20px;
+	padding: 12px 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

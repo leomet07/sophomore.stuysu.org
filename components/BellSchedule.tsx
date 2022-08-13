@@ -1,9 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import styles from "../styles/BellSchedule.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Key } from "react";
+import { GradientPill } from "./Gradient";
+import { ReceivedSchedule } from "../types/db_types";
 
-const BellSchedule = () => {
+const BellSchedule = (props: { current_schedule: ReceivedSchedule }) => {
+	// Remove passing periods
+	const display_schedule = props.current_schedule.segments.filter(
+		(v) => !v.name.includes("Passing")
+	);
+
 	const [width, setWidth] = useState(0);
 
 	useEffect(() => {
@@ -36,88 +43,38 @@ const BellSchedule = () => {
 	return (
 		<div className={visibility ? "" : styles.hidden}>
 			<div id={styles.bell_schedule_parent}>
-				<div id={styles.label} onClick={handleOnClick}>
-					<span>Bell Schedule</span>
-				</div>
+				<GradientPill
+					title="Bell Schedule"
+					id={styles.label}
+					onClick={handleOnClick}
+				/>
 				{visibility ? (
 					<div id={styles.bell_schedule}>
 						<div id={styles.schedule_container}>
 							<div id={styles.right}>
-								<p>
-									<span className={styles.highlight}>
-										Before school
-									</span>
-									&nbsp;Up to 8:00
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 1
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 2
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 3
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 4
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 5
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
+								{display_schedule
+									.splice(
+										0,
+										Math.floor(display_schedule.length / 2)
+									)
+									.map((schedule) => (
+										<p key={schedule.name as Key}>
+											<span className={styles.highlight}>
+												{schedule.name}
+											</span>{" "}
+											{schedule.start} - {schedule.end}
+										</p>
+									))}
 							</div>
-
 							<div id={styles.left}>
-								<p>
-									<span className={styles.highlight}>
-										Period 6
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 7
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 8
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 9
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										Period 10
-									</span>
-									&nbsp;8:00 to 8:49
-								</p>
-								<p>
-									<span className={styles.highlight}>
-										After School
-									</span>
-									&nbsp;After 8:49
-								</p>
+								{display_schedule.map((schedule) => (
+									<p key={schedule.name as Key}>
+										<span className={styles.highlight}>
+											{schedule.name}
+										</span>{" "}
+										{schedule.start} - {schedule.end}
+									</p>
+								))}
 							</div>
 						</div>
 					</div>

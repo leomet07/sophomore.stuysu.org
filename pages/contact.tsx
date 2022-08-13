@@ -5,6 +5,7 @@ import SiInstagram from "../public/img/socials/instagram.svg";
 import SiFacebook from "../public/img/socials/facebook.svg";
 import SiGithub from "../public/img/socials/github.svg";
 import Image from "next/image";
+import { GradientBorderShadow } from "../components/Gradient";
 
 const Contact: NextPage = () => {
 	return (
@@ -20,9 +21,9 @@ const Contact: NextPage = () => {
 				<h1 className={styles.title}>CONTACT US</h1>
 
 				<div className={styles.prompt}>
-					<div id={styles.lets_talk}>
+					<GradientBorderShadow id={styles.lets_talk}>
 						<p>Let&#39;s Talk!</p>
-					</div>
+					</GradientBorderShadow>
 					<div className={styles.limiter}>
 						<div className={styles.circle} />
 						<div className={styles.buttons}>

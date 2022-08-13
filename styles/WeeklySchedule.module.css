@@ -8,21 +8,8 @@
 }
 
 #label {
-	background-color: var(--secondary-color);
-	border: 1px solid var(--primary-color);
-	border-radius: 30px;
-	width: fit-content;
-	height: 40px;
-	position: absolute;
-	z-index: 3;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	margin-left: 3vw;
 	margin-top: -20px;
-	padding: 20px;
-	padding-right: 25px;
-	padding-left: 25px;
 }
 
 #label span {
@@ -33,7 +20,7 @@
 	height: 330px;
 	padding-top: 20px;
 	margin-top: auto;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
@@ -43,7 +30,7 @@
 #special_news_container {
 	height: 70px;
 	width: 100%;
-	border-top: 1px solid var(--primary-color);
+	border-top: 1px solid var(--secondary-color);
 	padding-left: max(30px, 2vw);
 	display: flex;
 	align-items: center;

@@ -1,15 +1,19 @@
 import styles from "../styles/ScheduleWidget.module.css";
+import { GradientPill, GradientShadow } from "./Gradient";
+import { ReceivedSchedule } from "../types/db_types";
 
-const ScheduleWidget = () => {
+const ScheduleWidget = (props: {
+	current_schedule: ReceivedSchedule;
+	current_schedule_name: string;
+}) => {
 	return (
 		<div id={styles.container}>
-			<div className={styles.pill} id={styles.schedule_type}>
-				<span>Regular</span>
-			</div>
-			<div className={styles.pill} id={styles.current_time}>
-				<span>12:23 PM</span>
-			</div>
-			<div id={styles.schedule_widget}>
+			<GradientPill
+				title={props.current_schedule_name}
+				id={styles.schedule_type}
+			/>
+			<GradientPill title="12:23 PM" id={styles.current_time} />
+			<GradientShadow id={styles.schedule_widget}>
 				<div className={styles.bottom}>
 					<p>
 						<span className={styles.highlight}>14</span> min
@@ -25,7 +29,7 @@ const ScheduleWidget = () => {
 						&nbsp;left
 					</p>
 				</div>
-			</div>
+			</GradientShadow>
 		</div>
 	);
 };
