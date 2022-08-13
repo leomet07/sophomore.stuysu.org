@@ -26,6 +26,7 @@ export interface ReceivedPolicy {
 }
 
 export interface ReceivedSchedule {
+	_id: mongoObjectId;
 	name: string;
 	segments: ScheduleSegment[];
 }

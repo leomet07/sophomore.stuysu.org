@@ -23,7 +23,7 @@ const Home = (
 	};
 	console.log("Server url", props.serverUrl);
 
-	const current_schedule_name = "Conference"; // Hardcoded
+	const current_schedule_name = props.current_schedule; // Hardcoded
 	const current_schedule: ReceivedSchedule =
 		props.schedules.find((v) => v.name == current_schedule_name) ||
 		props.schedules[0];
@@ -76,7 +76,10 @@ type getSchedulesResponse = {
 	success: boolean;
 	data: ReceivedSchedule[];
 };
-
+type getCurrentScheduleResponse = {
+	success: boolean;
+	current_schedule: string;
+};
 export const getServerSideProps = async (
 	context: GetServerSidePropsContext
 ) => {
@@ -91,10 +94,17 @@ export const getServerSideProps = async (
 	);
 	const schedules_json: getSchedulesResponse = await schedules_request.json();
 
+	const current_schedule_request: any = await fetch(
+		getServerUrl() + "/api/get_current_schedule"
+	);
+	const current_schedule_json: getCurrentScheduleResponse =
+		await current_schedule_request.json();
+
 	return {
 		props: {
 			announcements: announcements_json.data,
 			schedules: schedules_json.data,
+			current_schedule: current_schedule_json.current_schedule,
 			serverUrl: getServerUrl(),
 		},
 	};
