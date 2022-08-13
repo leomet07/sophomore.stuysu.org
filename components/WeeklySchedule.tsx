@@ -27,7 +27,7 @@ const WeeklySchedule = (props: { week_schedule_infos: ReceivedDay[] }) => {
 	const [visibility, setVisibility] = useState(true);
 	const handleOnClick = () => {
 		if (width <= 1130) {
-			setVisibility(!visibility); // Only toggle visiblity on mobile screens
+			setVisibility(!visibility); // Only toggle visibility on mobile screens
 		}
 	};
 
@@ -64,7 +64,7 @@ const WeeklySchedule = (props: { week_schedule_infos: ReceivedDay[] }) => {
 								</span>
 							</p>
 							<p>
-								Wensday{" "}
+								Wednesday{" "}
 								<span className={styles.highlight}>
 									{
 										props.week_schedule_infos[2]

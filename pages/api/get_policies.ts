@@ -3,14 +3,14 @@ import dbConnect from "../../lib/dbConnect";
 import Policy from "../../models/Policy";
 import { ReceivedPolicy } from "../../types/db_types";
 
-type ReponseData = {
+type ResponseData = {
 	success: boolean;
 	data?: ReceivedPolicy[];
 };
 
 export default async function handler(
 	req: NextApiRequest,
-	res: NextApiResponse<ReponseData>
+	res: NextApiResponse<ResponseData>
 ) {
 	const { method } = req;
 
