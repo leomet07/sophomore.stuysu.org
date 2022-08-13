@@ -2,14 +2,14 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "../../lib/dbConnect";
 import get_bell_schedule_by_date from "../../lib/get_bell_schedule_by_date";
 
-type ReponseData = {
+type ResponseData = {
 	success: boolean;
 	current_schedule?: string;
 };
 
 export default async function handler(
 	req: NextApiRequest,
-	res: NextApiResponse<ReponseData>
+	res: NextApiResponse<ResponseData>
 ) {
 	const { method } = req;
 

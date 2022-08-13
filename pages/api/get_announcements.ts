@@ -4,14 +4,14 @@ import Announcement from "../../models/Announcement";
 import { ReceivedAnnouncement } from "../../types/db_types";
 import { Types } from "mongoose";
 
-type ReponseData = {
+type ResponseData = {
 	success: boolean;
 	data?: ReceivedAnnouncement[];
 };
 
 export default async function handler(
 	req: NextApiRequest,
-	res: NextApiResponse<ReponseData>
+	res: NextApiResponse<ResponseData>
 ) {
 	const { method } = req;
 

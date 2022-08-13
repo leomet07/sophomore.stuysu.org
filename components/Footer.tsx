@@ -16,7 +16,7 @@ const Footer = () => {
 				rel="noreferrer"
 				id={styles.github_logo}
 			>
-				{/* The Github Logo SVG below is inline (and not in a next/img tag) so that the fill can be set dynamically through the CSS 
+				{/* The GitHub Logo SVG below is inline (and not in a next/img tag) so that the fill can be set dynamically through the CSS
 				(by just changing the color) */}
 				<svg
 					role="img"

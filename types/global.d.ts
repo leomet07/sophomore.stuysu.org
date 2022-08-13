@@ -1,6 +1,8 @@
 import { Connection } from "mongoose";
 
 declare global {
+	// global var cannot be scoped with let
+	// noinspection ES6ConvertVarToLetConst
 	var mongoose: any;
 }
 

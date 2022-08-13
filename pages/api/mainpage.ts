@@ -10,7 +10,7 @@ import {
 import get_bell_schedule_by_date from "../../lib/get_bell_schedule_by_date";
 import { Types } from "mongoose";
 
-type ReponseData = {
+type ResponseData = {
 	success: boolean;
 	schedules?: ReceivedSchedule[];
 	announcements?: ReceivedAnnouncement[];
@@ -42,7 +42,7 @@ function get_first_day(start_date: string) {
 
 export default async function handler(
 	req: NextApiRequest,
-	res: NextApiResponse<ReponseData>
+	res: NextApiResponse<ResponseData>
 ) {
 	const { method } = req;
 

@@ -32,7 +32,7 @@ const BellSchedule = (props: { current_schedule: ReceivedSchedule }) => {
 	const [visibility, setVisibility] = useState(true);
 	const handleOnClick = () => {
 		if (width <= 1130) {
-			setVisibility(!visibility); // Only toggle visiblity on mobile screens
+			setVisibility(!visibility); // Only toggle visibility on mobile screens
 		}
 	};
 

@@ -43,7 +43,7 @@ const Policies = (
 								<h1>{v.name}</h1>
 								<p>
 									<span className={styles.highlight}>
-										Catagory:
+										Category:
 									</span>
 									&nbsp;
 									{v.category}
