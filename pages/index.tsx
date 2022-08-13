@@ -5,7 +5,7 @@ import Announcement from "../components/Announcement";
 import ScheduleWidget from "../components/ScheduleWidget";
 import BellSchedule from "../components/BellSchedule";
 import WeeklySchedule from "../components/WeeklySchedule";
-import { ReceivedAnnouncement } from "../types/db_types";
+import { ReceivedAnnouncement, ReceivedSchedule } from "../types/db_types";
 import getServerUrl from "../lib/getServerUrl";
 import { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
@@ -22,6 +22,12 @@ const Home = (
 			.split(",")[0];
 	};
 	console.log("Server url", props.serverUrl);
+
+	const current_schedule_name = "Conference"; // Hardcoded
+	const current_schedule: ReceivedSchedule =
+		props.schedules.find((v) => v.name == current_schedule_name) ||
+		props.schedules[0];
+
 	return (
 		<>
 			<Head>
@@ -42,7 +48,7 @@ const Home = (
 				</section>
 				<section id={styles.schedule_information}>
 					<div id={styles.bell_schedule_container}>
-						<BellSchedule />
+						<BellSchedule current_schedule={current_schedule} />
 					</div>
 					<div id={styles.weekly_schedule_container}>
 						<WeeklySchedule />
@@ -65,15 +71,33 @@ const Home = (
 type getAnnouncementsResponse = {
 	success: boolean;
 	data: ReceivedAnnouncement[];
-	serverUrl: string;
+};
+type getSchedulesResponse = {
+	success: boolean;
+	data: ReceivedSchedule[];
 };
 
 export const getServerSideProps = async (
 	context: GetServerSidePropsContext
 ) => {
-	const r: any = await fetch(getServerUrl() + "/api/get_announcements");
-	const data: getAnnouncementsResponse = await r.json();
-	return { props: { announcements: data.data, serverUrl: getServerUrl() } };
+	const announcements_request: any = await fetch(
+		getServerUrl() + "/api/get_announcements"
+	);
+	const announcements_json: getAnnouncementsResponse =
+		await announcements_request.json();
+
+	const schedules_request: any = await fetch(
+		getServerUrl() + "/api/get_schedules"
+	);
+	const schedules_json: getSchedulesResponse = await schedules_request.json();
+
+	return {
+		props: {
+			announcements: announcements_json.data,
+			schedules: schedules_json.data,
+			serverUrl: getServerUrl(),
+		},
+	};
 };
 
 export default Home;
