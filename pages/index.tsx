@@ -26,7 +26,6 @@ const Home = (
 			.split(",")[0];
 	};
 	console.log("Server url", props.serverUrl);
-	console.log("Week schedule infos in client: ", props.week_schedule_infos);
 
 	const current_schedule_name = props.current_schedule; // Hardcoded
 	const current_schedule: ReceivedSchedule =
@@ -59,7 +58,9 @@ const Home = (
 						<BellSchedule current_schedule={current_schedule} />
 					</div>
 					<div id={styles.weekly_schedule_container}>
-						<WeeklySchedule />
+						<WeeklySchedule
+							week_schedule_infos={props.week_schedule_infos}
+						/>
 					</div>
 				</section>
 				<section id={styles.announcements}>

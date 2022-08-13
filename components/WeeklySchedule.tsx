@@ -3,8 +3,8 @@
 import styles from "../styles/WeeklySchedule.module.css";
 import { useState, useEffect } from "react";
 import { GradientPill } from "./Gradient";
-
-const WeeklySchedule = () => {
+import { ReceivedDay } from "../types/db_types";
+const WeeklySchedule = (props: { week_schedule_infos: ReceivedDay[] }) => {
 	const [width, setWidth] = useState(0);
 
 	useEffect(() => {
@@ -37,38 +37,57 @@ const WeeklySchedule = () => {
 	return (
 		<div className={visibility ? "" : styles.hidden}>
 			<div id={styles.weekly_schedule_parent}>
-				<GradientPill title="This Week @ Stuy" id={styles.label} onClick={handleOnClick} />
+				<GradientPill
+					title="This Week @ Stuy"
+					id={styles.label}
+					onClick={handleOnClick}
+				/>
 				{visibility ? (
 					<div id={styles.weekly_schedule_box}>
 						<div id={styles.weekly_schedule}>
 							<p>
 								Monday{" "}
 								<span className={styles.highlight}>
-									Regular
+									{
+										props.week_schedule_infos[0]
+											.bell_schedule_type
+									}
 								</span>
 							</p>
 							<p>
 								Tuesday{" "}
 								<span className={styles.highlight}>
-									Regular
+									{
+										props.week_schedule_infos[1]
+											.bell_schedule_type
+									}
 								</span>
 							</p>
 							<p>
 								Wensday{" "}
 								<span className={styles.highlight}>
-									Regular
+									{
+										props.week_schedule_infos[2]
+											.bell_schedule_type
+									}
 								</span>
 							</p>
 							<p>
 								Thursday{" "}
 								<span className={styles.highlight}>
-									Regular
+									{
+										props.week_schedule_infos[3]
+											.bell_schedule_type
+									}
 								</span>
 							</p>
 							<p>
 								Friday{" "}
 								<span className={styles.highlight}>
-									Regular
+									{
+										props.week_schedule_infos[4]
+											.bell_schedule_type
+									}
 								</span>
 							</p>
 						</div>
