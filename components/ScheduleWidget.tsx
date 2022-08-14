@@ -13,6 +13,8 @@ interface TimeState {
 	locale_time_string: string;
 	seconds: number;
 	period_index: number;
+	units_elapsed: TimeUnits;
+	units_remaining: TimeUnits;
 }
 
 function timeToSeconds(time: string) {
@@ -79,11 +81,26 @@ const ScheduleWidget = (props: {
 				props.current_schedule
 			);
 
+			const seconds_elapsed =
+				current_seconds -
+				timeToSeconds(
+					props.current_schedule.segments[period_index].start
+				);
+			const seconds_remaining =
+				timeToSeconds(
+					props.current_schedule.segments[period_index].end
+				) - current_seconds;
+
+			const units_elapsed = secondsToUnits(seconds_elapsed);
+			const units_remaining = secondsToUnits(seconds_remaining);
+
 			setallTimeInfo({
 				units: current_units,
 				locale_time_string: locale_time_string,
 				seconds: current_seconds,
 				period_index: period_index,
+				units_elapsed: units_elapsed,
+				units_remaining: units_remaining,
 			});
 		}, 1000);
 		return () => clearInterval(id);
@@ -103,9 +120,22 @@ const ScheduleWidget = (props: {
 			<GradientShadow id={styles.schedule_widget}>
 				<div className={styles.bottom}>
 					<p>
-						<span className={styles.highlight}>14</span> min
-						<span className={styles.shorten_utes}>utes</span>
-						&nbsp;passed
+						{allTimeInfo?.units_elapsed.hours ? (
+							<>
+								<span className={styles.highlight}>
+									{allTimeInfo.units_elapsed.hours}
+								</span>
+								h{" "}
+							</>
+						) : (
+							<></>
+						)}
+						<span className={styles.highlight}>
+							{allTimeInfo
+								? allTimeInfo.units_elapsed.minutes
+								: "XX"}
+						</span>
+						m passed
 					</p>
 				</div>
 				<h1 id={styles.current_period}>
@@ -117,9 +147,22 @@ const ScheduleWidget = (props: {
 				</h1>
 				<div className={styles.bottom}>
 					<p>
-						<span className={styles.highlight}>36</span> min
-						<span className={styles.shorten_utes}>utes</span>
-						&nbsp;left
+						{allTimeInfo?.units_remaining.hours ? (
+							<>
+								<span className={styles.highlight}>
+									{allTimeInfo.units_remaining.hours}
+								</span>
+								h{" "}
+							</>
+						) : (
+							<></>
+						)}
+						<span className={styles.highlight}>
+							{allTimeInfo
+								? allTimeInfo.units_remaining.minutes
+								: "XX"}
+						</span>
+						m left
 					</p>
 				</div>
 			</GradientShadow>
