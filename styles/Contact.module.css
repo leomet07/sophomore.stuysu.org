@@ -1,5 +1,7 @@
 .main {
 	height: calc(100vh - 70px);
+}
+.titleLimiter {
 	width: 100vw;
 	overflow-x: hidden;
 }

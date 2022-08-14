@@ -18,7 +18,9 @@ const Contact: NextPage = () => {
 				/>
 			</Head>
 			<main className={styles.main}>
-				<h1 className={styles.title}>CONTACT US</h1>
+				<div className={styles.titleLimiter}>
+					<h1 className={styles.title}>CONTACT US</h1>
+				</div>
 
 				<div className={styles.prompt}>
 					<GradientButton id={styles.lets_talk}>
