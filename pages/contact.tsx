@@ -67,7 +67,6 @@ const Contact: NextPage = () => {
 							.
 						</p>
 					</div>
-					<div className={styles.booster} />
 				</div>
 			</main>
 		</>

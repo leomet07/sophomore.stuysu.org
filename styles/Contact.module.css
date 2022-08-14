@@ -100,10 +100,6 @@
 	overflow-x: hidden;
 }
 
-.booster {
-	display: none;
-}
-
 .buttons {
 	position: relative;
 	margin: 5% auto auto;
@@ -142,15 +138,6 @@
 	text-decoration: underline;
 }
 @media (max-width: 900px) {
-	.booster {
-		display: block;
-		position: fixed;
-		bottom: 0;
-		width: 100vw;
-		height: 30vh;
-		background-color: var(--tertiary-color);
-		z-index: 0;
-	}
 	.buttons {
 		width: 90vw;
 		z-index: 1;
