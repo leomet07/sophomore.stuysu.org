@@ -1,5 +1,7 @@
 .main {
+	min-height: 500px;
 	height: calc(100vh - 70px);
+	position: relative;
 }
 .titleLimiter {
 	width: 100vw;
@@ -33,14 +35,6 @@
 	75% {
 		transform: translateX(-45%);
 	}
-}
-
-.prompt {
-	position: relative;
-}
-
-.prompt {
-	position: relative;
 }
 
 #lets_talk {
@@ -77,10 +71,13 @@
 
 .limiter {
 	position: absolute;
-	top: 35%;
+	top: calc(5rem + 7vh + 10vw);
+	bottom: -25px;
 	width: 100vw;
+	/*
 	min-height: 300px;
 	height: calc(100vh - 60px - 7vh - 5rem - 10vw);
+	*/
 	background-color: var(--base-color);
 
 	overflow: hidden;
@@ -149,3 +146,10 @@
 		z-index: 1;
 	}
 }
+
+@media (max-height: 500px) {
+	.limiter {
+		bottom: -10px;
+	}
+}
+
