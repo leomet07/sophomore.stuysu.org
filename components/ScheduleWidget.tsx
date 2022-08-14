@@ -8,6 +8,12 @@ interface TimeUnits {
 	minutes: number;
 	seconds: number;
 }
+interface TimeState {
+	units: TimeUnits;
+	locale_time_string: string;
+	seconds: number;
+	period_index: number;
+}
 
 function timeToSeconds(time: string) {
 	let [shours, sminutes, sseconds, half] = time.split(/[\:\ ]/);
@@ -42,42 +48,46 @@ function getCurrentTimeInLocaleTimeString() {
 	return locale_time_string;
 }
 
-function getCurrentTimeInUnits() {
-	const locale_time_string = getCurrentTimeInLocaleTimeString();
-	const current_seconds = timeToSeconds(locale_time_string);
-
-	return secondsToUnits(current_seconds);
-}
-
-function formatTimeUnits(units: TimeUnits): string {
-	const filler_date = new Date(
-		2018,
-		11,
-		24,
-		units.hours,
-		units.minutes,
-		units.seconds,
-		0
-	);
-
-	return filler_date.toLocaleTimeString("en-US", {
-		timeZone: "UTC", // Timezone UTC because the units are already in EST time
-	});
+function get_current_period(
+	current_seconds: number,
+	schedule: ReceivedSchedule
+) {
+	for (let i = 0; i < schedule.segments.length; i++) {
+		const period = schedule.segments[i];
+		if (current_seconds < timeToSeconds(period.end)) {
+			return i;
+		}
+	}
+	return 0; // If not found (due to glitch), use first period
 }
 
 const ScheduleWidget = (props: {
 	current_schedule: ReceivedSchedule;
 	current_schedule_name: string;
 }) => {
-	const [units, setUnits] = useState<TimeUnits>();
+	const [allTimeInfo, setallTimeInfo] = useState<TimeState>();
 
 	useEffect(() => {
 		const id = setInterval(() => {
-			const current_units = getCurrentTimeInUnits();
-			setUnits(current_units);
+			const locale_time_string = getCurrentTimeInLocaleTimeString();
+			const current_seconds = timeToSeconds(locale_time_string);
+			const current_units = secondsToUnits(current_seconds);
+
+			// Get current "place" in the schedule
+			const period_index = get_current_period(
+				current_seconds,
+				props.current_schedule
+			);
+
+			setallTimeInfo({
+				units: current_units,
+				locale_time_string: locale_time_string,
+				seconds: current_seconds,
+				period_index: period_index,
+			});
 		}, 1000);
 		return () => clearInterval(id);
-	}, []);
+	}, [props.current_schedule]);
 	return (
 		<div id={styles.container}>
 			<GradientPill
@@ -85,7 +95,9 @@ const ScheduleWidget = (props: {
 				id={styles.schedule_type}
 			/>
 			<GradientPill
-				title={units ? formatTimeUnits(units) : "XX:XX:XX PM"}
+				title={
+					allTimeInfo ? allTimeInfo.locale_time_string : "XX:XX:XX PM"
+				}
 				id={styles.current_time}
 			/>
 			<GradientShadow id={styles.schedule_widget}>
@@ -96,7 +108,13 @@ const ScheduleWidget = (props: {
 						&nbsp;passed
 					</p>
 				</div>
-				<h1 id={styles.current_period}>Period 8</h1>
+				<h1 id={styles.current_period}>
+					{allTimeInfo
+						? props.current_schedule.segments[
+								allTimeInfo.period_index
+						  ].name
+						: "Period X"}
+				</h1>
 				<div className={styles.bottom}>
 					<p>
 						<span className={styles.highlight}>36</span> min
