@@ -81,8 +81,7 @@
 	height: calc(100vh - 60px - 7vh - 5rem - 10vw);
 	background-color: var(--base-color);
 
-	overflow-y: clip;
-	overflow-x: clip;
+	overflow: hidden;
 	z-index: 1;
 }
 
