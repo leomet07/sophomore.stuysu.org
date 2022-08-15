@@ -8,6 +8,7 @@ const ProfileSchema = new mongoose.Schema({
 	name: String,
 	pronouns: String,
 	role: String,
+	index: Number,
 });
 const ProfileModel =
 	mongoose.models.Profile || mongoose.model("Profile", ProfileSchema);

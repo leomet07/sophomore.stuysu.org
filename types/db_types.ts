@@ -15,6 +15,7 @@ export interface ReceivedProfile {
 	name: string;
 	pronouns: string;
 	role: string;
+	index: number;
 }
 export interface ReceivedPolicy {
 	_id: mongoObjectId;
