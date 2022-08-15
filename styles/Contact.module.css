@@ -71,7 +71,7 @@
 
 .limiter {
 	position: absolute;
-	top: calc(5rem + 7vh + 10vw);
+	top: calc(5rem + 7vh + 15vw);
 	bottom: -25px;
 	width: 100vw;
 	/*
@@ -135,7 +135,10 @@
 #feedback a {
 	text-decoration: underline;
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+	.limiter {
+		top: calc(5rem + 7vh + 10vw);
+	}
 	.buttons {
 		width: 90vw;
 		z-index: 1;
