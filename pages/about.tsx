@@ -14,7 +14,7 @@ const About = (
 	const presidents = props.profiles.filter((profile) => profile.president);
 	const directors = props.profiles.filter((profile) => !profile.president);
 	let line_key = 0; // counter for mapping out keys for the <p> tags in President profiles
-	console.log(presidents, directors);
+
 	return (
 		<>
 			<Head>
@@ -22,7 +22,9 @@ const About = (
 				<meta name="description" content="About the Sophomore Caucus" />
 			</Head>
 			<main className={styles.main}>
-				<h1 className={styles.title}>ABOUT <GradientTitle>US</GradientTitle></h1>
+				<h1 className={styles.title}>
+					ABOUT <GradientTitle>US</GradientTitle>
+				</h1>
 				<div className={styles.presidents}>
 					{presidents.map((president) => (
 						<Profile
