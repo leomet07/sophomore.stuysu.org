@@ -23,7 +23,7 @@ const Contact: NextPage = () => {
 				</div>
 
 				<div className={styles.prompt}>
-					<GradientButton id={styles.lets_talk}>
+					<GradientButton id={styles.lets_talk} href="https://linktr.ee/SophomoreCaucus22_23">
 						<p>Let&#39;s Talk!</p>
 					</GradientButton>
 					<div className={styles.limiter}>
