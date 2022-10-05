@@ -78,7 +78,7 @@ const GradientButton = (props: {id?: string, className?: string, href?: string, 
            onClick={props.onClick}
            href={(props.href) ? props.href : '#'}
            target={(props.href) ? '_blank' : undefined}
-           rel={(props.href) ? 'noopener' : undefined}
+           rel='noreferrer'
         >
             <div className={styles.background} />
             {props.children}
