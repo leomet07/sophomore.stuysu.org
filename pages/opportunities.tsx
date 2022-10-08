@@ -1,7 +1,36 @@
 import Head from "next/head";
 import styles from "../styles/Opportunities.module.css";
 import { GradientTitle } from "../components/Gradient";
+import { Key } from "react";
+
 const Opportunities = () => {
+	const weeks_dummy_data = [
+		{
+			week_start: "12/10/22",
+			activities: [
+				"Carnival",
+				"Science Fair Registration",
+				"Dance",
+				"Performance Meeting",
+				"Among US",
+				"Free hoodies",
+				"Morning announcements",
+			],
+		},
+		{
+			week_start: "12/17/22",
+			activities: [
+				"Carnival",
+				"Science Fair Registration",
+				"Dance",
+				"Performance Meeting",
+				"Among US",
+				"Free hoodies",
+				"Morning announcements",
+			],
+		},
+	];
+	const weeks_data = weeks_dummy_data;
 	return (
 		<>
 			<Head>
@@ -23,20 +52,15 @@ const Opportunities = () => {
 				</div>
 				<section id={styles.bulletin}>
 					<div id={styles.weeks_display}>
-						<div className={styles.week}>
-							<h3>Week of 12/17</h3>
-							<p>
-								Carnival, Science Fair Registration, Dance &
-								Performance Meeting
-							</p>
-						</div>
-						<div className={styles.week}>
-							<h3>Week of 12/24</h3>
-							<p>
-								Carnival, Science Fair Registration, Dance &
-								Performance Meeting
-							</p>
-						</div>
+						{weeks_data.map((v, index) => (
+							<div className={styles.week} key={index as Key}>
+								<h3>Week of {v.week_start}</h3>
+								<p>
+									{v.activities.splice(0, 4).join(", ")}, and
+									more!
+								</p>
+							</div>
+						))}
 					</div>
 				</section>
 			</main>
