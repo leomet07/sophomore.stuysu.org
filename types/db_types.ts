@@ -42,3 +42,10 @@ export interface ReceivedDay {
 	date: string;
 	bell_schedule_type: string;
 }
+
+export interface ReceivedWeeklyBulletin {
+	_id: mongoObjectId;
+	week_start: string;
+	url: string;
+	highlights: string[];
+}
