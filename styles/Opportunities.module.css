@@ -57,3 +57,34 @@
 		font-size: 1.2rem;
 	}
 }
+
+#bulletin {
+	margin-top: 40px;
+	width: 100%;
+}
+#weeks_display {
+	width: 100%;
+	border: 1px solid var(--primary-color);
+	border-radius: 10px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-bottom: 5px;
+}
+.week {
+	border-bottom: 1px solid var(--primary-color);
+	/* margin-bottom: 25px; */
+	margin-top: 25px;
+	font-size: 1.1rem;
+}
+
+.week:last-of-type {
+	border-bottom: none;
+}
+
+.week h3 {
+	margin-bottom: 15px;
+}
+.week p {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}

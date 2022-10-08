@@ -21,6 +21,24 @@ const Opportunities = () => {
 						</p>
 					</div>
 				</div>
+				<section id={styles.bulletin}>
+					<div id={styles.weeks_display}>
+						<div className={styles.week}>
+							<h3>Week of 12/17</h3>
+							<p>
+								Carnival, Science Fair Registration, Dance &
+								Performance Meeting
+							</p>
+						</div>
+						<div className={styles.week}>
+							<h3>Week of 12/24</h3>
+							<p>
+								Carnival, Science Fair Registration, Dance &
+								Performance Meeting
+							</p>
+						</div>
+					</div>
+				</section>
 			</main>
 		</>
 	);
