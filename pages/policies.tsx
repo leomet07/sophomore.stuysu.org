@@ -22,7 +22,9 @@ const Policies = (
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>OUR <GradientTitle>POLICIES</GradientTitle></h1>
+				<h1 className={styles.title}>
+					OUR <GradientTitle>POLICIES</GradientTitle>
+				</h1>
 				<div id={styles.internal_container}>
 					<div id={styles.nav_container}>
 						<nav id={styles.nav}>
