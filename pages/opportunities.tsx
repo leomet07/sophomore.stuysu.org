@@ -2,35 +2,16 @@ import Head from "next/head";
 import styles from "../styles/Opportunities.module.css";
 import { GradientTitle } from "../components/Gradient";
 import { Key } from "react";
+import { ReceivedWeeklyBulletin } from "../types/db_types";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import getServerUrl from "../lib/getServerUrl";
+import WeeklySchedule from "../components/WeeklySchedule";
 
-const Opportunities = () => {
-	const weeks_dummy_data = [
-		{
-			week_start: "12/10/22",
-			activities: [
-				"Carnival",
-				"Science Fair Registration",
-				"Dance",
-				"Performance Meeting",
-				"Among US",
-				"Free hoodies",
-				"Morning announcements",
-			],
-		},
-		{
-			week_start: "12/17/22",
-			activities: [
-				"Carnival",
-				"Science Fair Registration",
-				"Dance",
-				"Performance Meeting",
-				"Among US",
-				"Free hoodies",
-				"Morning announcements",
-			],
-		},
-	];
-	const weeks_data = weeks_dummy_data;
+const Opportunities = (
+	props: InferGetServerSidePropsType<typeof getServerSideProps>
+) => {
+	const weeks_data = props.weekly_bulletins;
+
 	return (
 		<>
 			<Head>
@@ -52,20 +33,53 @@ const Opportunities = () => {
 				</div>
 				<section id={styles.bulletin}>
 					<div id={styles.weeks_display}>
-						{weeks_data.map((v, index) => (
-							<div className={styles.week} key={index as Key}>
-								<h3>Week of {v.week_start}</h3>
-								<p>
-									{v.activities.splice(0, 4).join(", ")}, and
-									more!
-								</p>
-							</div>
-						))}
+						{weeks_data.map((week, index) => {
+							const start = 0;
+							const kept = 4;
+							return (
+								<div
+									className={styles.week}
+									key={week._id as Key}
+								>
+									<h3>Week of {week.week_start}</h3>
+									<p>
+										{week.highlights
+											.filter((item, index) => {
+												// This is same as array.splice() WITHOUT mutating the original array
+												// If original array is mutated and items are removed, site crashes on re-renders
+												return (
+													index >= start &&
+													index < kept + start
+												);
+											})
+											.join(", ")}
+										, and more!
+									</p>
+								</div>
+							);
+						})}
 					</div>
 				</section>
 			</main>
 		</>
 	);
+};
+
+type getOpportunitiesResponse = {
+	success: boolean;
+	data: ReceivedWeeklyBulletin[];
+	serverUrl: string;
+};
+
+export const getServerSideProps = async (
+	context: GetServerSidePropsContext
+) => {
+	const r: any = await fetch(getServerUrl() + "/api/get_weekly_bulletins");
+	const data: getOpportunitiesResponse = await r.json();
+
+	return {
+		props: { weekly_bulletins: data.data, serverUrl: getServerUrl() },
+	};
 };
 
 export default Opportunities;
