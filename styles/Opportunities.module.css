@@ -59,7 +59,7 @@
 }
 
 #bulletin {
-	margin-top: 40px;
+	margin-top: 50px;
 	width: 100%;
 }
 #weeks_display {
@@ -86,5 +86,5 @@
 }
 .week p {
 	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 }
