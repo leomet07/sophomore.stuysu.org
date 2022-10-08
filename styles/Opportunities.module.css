@@ -14,6 +14,7 @@
 @media (max-width: 700px) {
 	.title {
 		text-align: center;
+		font-size: 2.5rem;
 	}
 }
 
@@ -38,7 +39,21 @@
 	justify-content: flex-end;
 	border-bottom-right-radius: 10px;
 	border-top-right-radius: 10px;
-}
-#right_half {
 	font-size: 1.3rem;
+}
+@media (max-width: 900px) {
+	#topdiv {
+		height: 280px;
+	}
+	#right_half {
+		width: 100%;
+	}
+}
+@media (max-width: 490px) {
+	.title {
+		font-size: 2.4rem;
+	}
+	#right_half {
+		font-size: 1.2rem;
+	}
 }
