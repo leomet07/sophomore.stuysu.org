@@ -6,7 +6,7 @@
 	align-items: center;
 }
 
-#links_container {
+#buttons {
 	font-size: 1.5rem;
 	display: flex;
 	width: fit-content;
@@ -23,26 +23,20 @@
 	filter: var(--asset-filter);
 }
 
-@media (max-width: 420px) {
-	.link {
-		margin-left: 5px;
-		margin-right: 5px;
-	}
+.sandwich {
+	display: none;
 }
-@media (max-width: 400px) {
-	#links_container {
-		margin: auto;
-		font-size: 1.4rem;
-	}
-}
-@media (max-width: 370px) {
-	#links_container {
-		margin: auto;
-		font-size: 1.35rem;
+
+@media (max-width: 680px) {
+	.sandwich {
+		padding-top: 0.2rem;
+		padding-left: 0.4rem;
+		cursor: pointer;
+		display: block;
+		filter: var(--asset-filter);
 	}
 	.link {
-		margin-left: 4px;
-		margin-right: 4px;
+		display: none;
 	}
 }
 

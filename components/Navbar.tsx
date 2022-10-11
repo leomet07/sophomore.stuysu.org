@@ -3,6 +3,7 @@ import Link from "next/link";
 import logoImg from "../public/img/logo.png";
 import sunImg from "../public/img/sun.svg";
 import moonImg from "../public/img/moon.svg";
+import sandwichImg from "../public/img/sandwich.svg"
 import Image from "next/image";
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
 					/>
 				</a>
 			</Link>
-			<div id={styles.links_container}>
+			<div id={styles.buttons}>
 				<div
 					className={styles.toggle}
 					onClick={() => {
@@ -40,6 +41,12 @@ const Navbar = () => {
 					<div className={styles.moon}>
 						<Image alt="" src={moonImg} />
 					</div>
+				</div>
+				<div className={styles.sandwich}>
+					<Image alt="" src={sandwichImg} />
+				</div>
+				<div className={styles.link}>
+					<Link href="/opportunities">Opportunities</Link>
 				</div>
 				<div className={styles.link}>
 					<Link href="/contact">Contact</Link>
