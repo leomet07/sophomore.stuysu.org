@@ -30,9 +30,8 @@
 #right_half {
 	height: 100%;
 	width: 50%;
-	background-color: #141414;
+	background-color: rgba(20, 20, 20, 0.9);
 	color: #e9e9e9;
-	opacity: 0.9;
 	padding: 30px;
 	display: flex;
 	flex-direction: column;
@@ -40,6 +39,8 @@
 	border-bottom-right-radius: 10px;
 	border-top-right-radius: 10px;
 	font-size: 1.3rem;
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
 }
 @media (max-width: 900px) {
 	#topdiv {
