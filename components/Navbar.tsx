@@ -42,20 +42,21 @@ const Navbar = () => {
 						<Image alt="" src={moonImg} />
 					</div>
 				</div>
-				<div className={styles.sandwich}>
-					<Image alt="" src={sandwichImg} />
-				</div>
-				<div className={styles.link}>
-					<Link href="/opportunities">Opportunities</Link>
-				</div>
-				<div className={styles.link}>
-					<Link href="/contact">Contact</Link>
-				</div>
-				<div className={styles.link}>
-					<Link href="/policies">Policies</Link>
-				</div>
-				<div className={styles.link}>
-					<Link href="/about">About</Link>
+				<input id={styles.toggle} type="checkbox" />
+				<label id={styles.sandwich} htmlFor={styles.toggle}> <Image alt="" src={sandwichImg} /> </label>
+				<div className={styles.links_container}>
+					<div className={styles.link}>
+						<Link href="/opportunities">Opportunities</Link>
+					</div>
+					<div className={styles.link}>
+						<Link href="/contact">Contact</Link>
+					</div>
+					<div className={styles.link}>
+						<Link href="/policies">Policies</Link>
+					</div>
+					<div className={styles.link}>
+						<Link href="/about">About</Link>
+					</div>
 				</div>
 			</div>
 		</nav>

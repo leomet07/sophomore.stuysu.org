@@ -6,7 +6,7 @@
 	align-items: center;
 }
 
-#buttons {
+#buttons, .links_container {
 	font-size: 1.5rem;
 	display: flex;
 	width: fit-content;
@@ -23,20 +23,35 @@
 	filter: var(--asset-filter);
 }
 
-.sandwich {
+#toggle,
+#sandwich {
 	display: none;
 }
 
 @media (max-width: 680px) {
-	.sandwich {
+	#sandwich {
 		padding-top: 0.2rem;
 		padding-left: 0.4rem;
 		cursor: pointer;
 		display: block;
 		filter: var(--asset-filter);
 	}
-	.link {
-		display: none;
+	.links_container {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		background: var(--primary-color);
+		color: var(--secondary-color);
+		font-size: 4rem;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: 1s top;
+	}
+	#toggle:checked ~ .links_container {
+		top: 10vh;  /* currently offset so I have room to interact with the navbar */
 	}
 }
 
