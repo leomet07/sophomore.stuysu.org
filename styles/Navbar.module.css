@@ -25,13 +25,19 @@
 	filter: var(--asset-filter);
 }
 
-#toggle,
-.menu {
+#toggle {
 	display: none;
 }
+.menu {
+	display: none;
+	--sandwich: block;
+	--x: none;
+}
+#x {
+	display: var(--x);
+}
 #sandwich {
-	/* parent div already hidden*/
-	display: block;
+	display: var(--sandwich);
 }
 
 @media (max-width: 680px) {
@@ -70,15 +76,9 @@
 	#toggle:checked ~ .links_container {
 		top: 85px;
 	}
-	#x,
-	#toggle:checked ~ #sandwich {
-		display: none;
-		opacity: 0;
-		transition: 1s opacity;
-	}
-	#toggle:checked ~ #x {
-		opacity: 100%;
-		display: block;
+	#toggle:checked ~ .menu {
+		--sandwich: none;
+		--x: block;
 	}
 
 }
