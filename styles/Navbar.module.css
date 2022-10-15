@@ -5,10 +5,11 @@
 	display: flex;
 	align-items: center;
 	position: relative;
-	z-index: 100;  /* random constant, make things go on top */
+	z-index: 100; /* random constant, make things go on top */
 }
 
-#buttons, .links_container {
+#buttons,
+.links_container {
 	font-size: 1.5rem;
 	display: flex;
 	width: fit-content;
@@ -80,7 +81,6 @@
 		--sandwich: none;
 		--x: block;
 	}
-
 }
 @media (max-width: 400px) {
 	.links_container {
