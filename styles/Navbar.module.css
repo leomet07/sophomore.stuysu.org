@@ -1,12 +1,15 @@
 #nav {
-	height: 100%;
+	margin: 15px auto 0;
+	height: 55px;
 	width: 94vw;
-	margin: auto;
 	display: flex;
 	align-items: center;
+	position: relative;
+	z-index: 100; /* random constant, make things go on top */
 }
 
-#links_container {
+#buttons,
+.links_container {
 	font-size: 1.5rem;
 	display: flex;
 	width: fit-content;
@@ -23,26 +26,70 @@
 	filter: var(--asset-filter);
 }
 
-@media (max-width: 420px) {
-	.link {
-		margin-left: 5px;
-		margin-right: 5px;
+#toggle {
+	display: none;
+}
+.menu {
+	display: none;
+	--sandwich: block;
+	--x: none;
+}
+#x {
+	display: var(--x);
+}
+#sandwich {
+	display: var(--sandwich);
+}
+
+@media (max-width: 680px) {
+	#nav {
+		position: fixed;
+		margin: 0;
+		padding: 15px 3vw;
+		height: 85px;
+		width: 100vw;
+		background-color: var(--base-color);
+	}
+	.menu {
+		padding-top: 0.2rem;
+		padding-left: 0.4rem;
+		display: block;
+		filter: var(--asset-filter);
+	}
+	.menu label {
+		cursor: pointer;
+	}
+	.links_container {
+		min-height: fit-content;
+		width: 100vw;
+		height: calc(100vh - 85px);
+		position: fixed;
+		/*z-index: -1;*/
+		top: -100vh;
+		left: 0;
+		background-color: var(--base-color);
+		font-size: 3.75rem;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: 1s top;
+	}
+	#toggle:checked ~ .links_container {
+		top: 85px;
+	}
+	#toggle:checked ~ .menu {
+		--sandwich: none;
+		--x: block;
 	}
 }
 @media (max-width: 400px) {
-	#links_container {
-		margin: auto;
-		font-size: 1.4rem;
+	.links_container {
+		font-size: 3rem;
 	}
 }
-@media (max-width: 370px) {
-	#links_container {
-		margin: auto;
-		font-size: 1.35rem;
-	}
-	.link {
-		margin-left: 4px;
-		margin-right: 4px;
+@media (max-width: 300px) {
+	.links_container {
+		font-size: 2rem;
 	}
 }
 

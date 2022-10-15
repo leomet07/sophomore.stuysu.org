@@ -10,9 +10,9 @@
 	/**** theming variables ****/
 	--base-color: white;
 	--primary-color: black;
-	--secondary-color: #B0B0B0;
-	--tertiary-color: #D2D2D2;
-	--gradient-purple: linear-gradient(180deg, #D100B0 0%, #752DC0 100%);
+	--secondary-color: #b0b0b0;
+	--tertiary-color: #d2d2d2;
+	--gradient-purple: linear-gradient(180deg, #d100b0 0%, #752dc0 100%);
 
 	/* assuming all assets are black for light mode by default */
 	--asset-filter: none;
@@ -43,9 +43,15 @@ a {
 	margin: 0;
 }
 #navbar_parent {
-	margin-top: 15px;
 	height: 55px;
 }
+
+@media (max-width: 680px) {
+	#navbar_parent {
+		height: 85px;
+	}
+}
+
 #main_parent {
 	min-height: calc(100vh - 55px);
 }
@@ -53,9 +59,9 @@ a {
 	margin-top: 10px;
 }
 .dark-mode {
-	--base-color: #0A0A0A;
-	--primary-color: #E9E9E9;
-	--secondary-color: #4B4B4B;
+	--base-color: #0a0a0a;
+	--primary-color: #e9e9e9;
+	--secondary-color: #4b4b4b;
 	--tertiary-color: #141414;
 
 	/* it's ok to have a little invert, not the whole page */
