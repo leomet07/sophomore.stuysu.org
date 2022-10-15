@@ -4,6 +4,7 @@ import logoImg from "../public/img/logo.png";
 import sunImg from "../public/img/sun.svg";
 import moonImg from "../public/img/moon.svg";
 import sandwichImg from "../public/img/sandwich.svg"
+import xImg from "../public/img/x.svg"
 import Image from "next/image";
 
 const Navbar = () => {
@@ -42,20 +43,23 @@ const Navbar = () => {
 						<Image alt="" src={moonImg} />
 					</div>
 				</div>
-				<input id={styles.toggle} type="checkbox" />
-				<label id={styles.sandwich} htmlFor={styles.toggle}> <Image alt="" src={sandwichImg} /> </label>
-				<div className={styles.links_container}>
-					<div className={styles.link}>
-						<Link href="/opportunities">Opportunities</Link>
-					</div>
-					<div className={styles.link}>
-						<Link href="/contact">Contact</Link>
-					</div>
-					<div className={styles.link}>
-						<Link href="/policies">Policies</Link>
-					</div>
-					<div className={styles.link}>
-						<Link href="/about">About</Link>
+				<div className={styles.menu}>
+					<input id={styles.toggle} type="checkbox" />
+					<label id={styles.sandwich} htmlFor={styles.toggle}> <Image alt="" src={sandwichImg} /></label>
+					<label id={styles.x} htmlFor={styles.toggle}> <Image alt="" src={xImg} /></label>
+					<div className={styles.links_container}>
+						<div className={styles.link}>
+							<Link href="/opportunities">Opportunities</Link>
+						</div>
+						<div className={styles.link}>
+							<Link href="/contact">Contact</Link>
+						</div>
+						<div className={styles.link}>
+							<Link href="/policies">Policies</Link>
+						</div>
+						<div className={styles.link}>
+							<Link href="/about">About</Link>
+						</div>
 					</div>
 				</div>
 			</div>

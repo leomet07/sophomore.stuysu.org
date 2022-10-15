@@ -43,9 +43,15 @@ a {
 	margin: 0;
 }
 #navbar_parent {
-	margin-top: 15px;
 	height: 55px;
 }
+
+@media (max-width: 680px) {
+	#navbar_parent {
+		height: 85px;
+	}
+}
+
 #main_parent {
 	min-height: calc(100vh - 55px);
 }
