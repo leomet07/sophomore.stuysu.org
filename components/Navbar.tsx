@@ -6,10 +6,22 @@ import moonImg from "../public/img/moon.svg";
 import sandwichImg from "../public/img/sandwich.svg"
 import xImg from "../public/img/x.svg"
 import Image from "next/image";
+import { ReactNode } from "react";
+
+const NavLink = (props: {href: string, children: ReactNode}) => (
+	<div className={styles.link} onClick={() => {
+		document?.getElementById(styles.toggle)?.click();
+	}}>
+		<Link href={props.href}>{props.children}</Link>
+	</div>
+)
 
 const Navbar = () => {
 	return (
 		<nav id={styles.nav}>
+			<div onClick={() => {
+				document?.getElementById(styles.toggle)?.click();
+			}}>
 			<Link href="/" passHref>
 				<a>
 					<Image
@@ -21,6 +33,7 @@ const Navbar = () => {
 					/>
 				</a>
 			</Link>
+			</div>
 			<div id={styles.buttons}>
 				<div
 					className={styles.toggle}
@@ -44,24 +57,16 @@ const Navbar = () => {
 					</div>
 				</div>
 				<input id={styles.toggle} type="checkbox" />
-				<div className={styles.menu}>
-					<label id={styles.sandwich} htmlFor={styles.toggle}> <Image alt="" src={sandwichImg} /></label>
-					<label id={styles.x} htmlFor={styles.toggle}> <Image alt="" src={xImg} /></label>
-				</div>
-				<div className={styles.links_container}>
-					<div className={styles.link}>
-						<Link href="/opportunities">Opportunities</Link>
-					</div>
-					<div className={styles.link}>
-						<Link href="/contact">Contact</Link>
-					</div>
-					<div className={styles.link}>
-						<Link href="/policies">Policies</Link>
-					</div>
-					<div className={styles.link}>
-						<Link href="/about">About</Link>
-					</div>
-				</div>
+				<label htmlFor={styles.toggle} className={styles.menu}>
+					<div id={styles.sandwich}> <Image alt="" src={sandwichImg} /></div>
+					<div id={styles.x}> <Image alt="" src={xImg} /></div>
+				</label>
+				<label htmlFor={styles.toggle} className={styles.links_container}>
+					<NavLink href={"/opportunities"}>Opportunities</NavLink>
+					<NavLink href="/contact">Contact</NavLink>
+					<NavLink href="/policies">Policies</NavLink>
+					<NavLink href="/about">About</NavLink>
+				</label>
 				</div>
 
 		</nav>
