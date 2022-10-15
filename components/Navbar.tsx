@@ -7,21 +7,19 @@ import sandwichImg from "../public/img/sandwich.svg"
 import xImg from "../public/img/x.svg"
 import Image from "next/image";
 import { ReactNode } from "react";
+import { useRouter } from "next/router";
 
 const NavLink = (props: {href: string, children: ReactNode}) => (
-	<div className={styles.link} onClick={() => {
-		document?.getElementById(styles.toggle)?.click();
-	}}>
+	<div className={styles.link}>
 		<Link href={props.href}>{props.children}</Link>
 	</div>
 )
 
 const Navbar = () => {
+	const router = useRouter();  // used to remount/reset <nav> every navigation
 	return (
-		<nav id={styles.nav}>
-			<div onClick={() => {
-				document?.getElementById(styles.toggle)?.click();
-			}}>
+		<nav id={styles.nav} key={router.asPath}>
+			<div>
 			<Link href="/" passHref>
 				<a>
 					<Image
