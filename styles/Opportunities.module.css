@@ -76,6 +76,8 @@
 	/* margin-bottom: 25px; */
 	margin-top: 25px;
 	font-size: 1.1rem;
+	display: flex;
+	justify-content: space-between;
 }
 
 .week:last-of-type {
@@ -88,4 +90,16 @@
 .week p {
 	margin-top: 15px;
 	margin-bottom: 25px;
+}
+
+.week_clickable_link {
+	margin-left: 10px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.week_clickable_link span {
+	font-size: 50px;
+	margin-top: -25px;
+	font-size: bold;
 }

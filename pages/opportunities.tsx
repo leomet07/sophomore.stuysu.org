@@ -5,7 +5,6 @@ import { Key } from "react";
 import { ReceivedWeeklyBulletin } from "../types/db_types";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import getServerUrl from "../lib/getServerUrl";
-import WeeklySchedule from "../components/WeeklySchedule";
 
 const Opportunities = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -41,20 +40,29 @@ const Opportunities = (
 									className={styles.week}
 									key={week._id as Key}
 								>
-									<h3>Week of {week.week_start}</h3>
-									<p>
-										{week.highlights
-											.filter((item, index) => {
-												// This is same as array.splice() WITHOUT mutating the original array
-												// If original array is mutated and items are removed, site crashes on re-renders
-												return (
-													index >= start &&
-													index < kept + start
-												);
-											})
-											.join(", ")}
-										, and more!
-									</p>
+									<div className={styles.week_text}>
+										<h3>Week of {week.week_start}</h3>
+										<p>
+											{week.highlights
+												.filter((item, index) => {
+													// This is same as array.splice() WITHOUT mutating the original array
+													// If original array is mutated and items are removed, site crashes on re-renders
+													return (
+														index >= start &&
+														index < kept + start
+													);
+												})
+												.join(", ")}
+											, and more!
+										</p>
+									</div>
+
+									<a
+										href={week.url}
+										className={styles.week_clickable_link}
+									>
+										<span>&gt;</span>
+									</a>
 								</div>
 							);
 						})}
