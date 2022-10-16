@@ -60,6 +60,8 @@ const Opportunities = (
 									<a
 										href={week.url}
 										className={styles.week_clickable_link}
+										target="_blank"
+										rel="noreferrer"
 									>
 										<span>&gt;</span>
 									</a>
