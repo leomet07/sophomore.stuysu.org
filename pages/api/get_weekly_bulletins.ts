@@ -19,9 +19,9 @@ export default async function handler(
 	switch (method) {
 		case "GET":
 			try {
-				let db_weekly_bulletins = (await WeeklyBulletin.find(
-					{}
-				)) as ReceivedWeeklyBulletin[];
+				let db_weekly_bulletins = (await WeeklyBulletin.find({}).sort({
+					_id: "descending",
+				})) as ReceivedWeeklyBulletin[];
 
 				res.status(200).json({
 					success: true,

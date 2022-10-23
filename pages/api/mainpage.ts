@@ -75,7 +75,9 @@ export default async function handler(
 					{}
 				)) as ReceivedSchedule[];
 
-				let db_announcements = (await Announcement.find({})) as any[];
+				let db_announcements = (await Announcement.find({}).sort({
+					_id: "descending",
+				})) as any[];
 
 				let announcements = db_announcements.map((v) => {
 					const objid = new Types.ObjectId(v._id);
