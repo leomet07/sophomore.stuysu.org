@@ -65,14 +65,14 @@
 }
 #weeks_display {
 	width: 100%;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--secondary-color);
 	border-radius: 10px;
 	padding-right: 30px;
 	padding-left: 30px;
 	padding-bottom: 5px;
 }
 .week {
-	border-bottom: 1px solid var(--primary-color);
+	border-bottom: 1px solid var(--secondary-color);
 	/* margin-bottom: 25px; */
 	margin-top: 25px;
 	font-size: 1.1rem;
