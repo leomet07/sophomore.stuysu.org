@@ -61,18 +61,22 @@ const BellSchedule = (props: { current_schedule: ReceivedSchedule }) => {
 										<p key={schedule.name as Key}>
 											<span className={styles.highlight}>
 												{schedule.name}
-											</span>{" "}
-											{schedule.start} - {schedule.end}
+											</span>
+											{`${schedule.name !== "Before School" ? schedule.start + " -" : "Before"} ${schedule.end}`}
 										</p>
 									))}
 							</div>
+							<div id={styles.divider}/>
 							<div id={styles.left}>
 								{display_schedule.map((schedule) => (
 									<p key={schedule.name as Key}>
 										<span className={styles.highlight}>
 											{schedule.name}
-										</span>{" "}
-										{schedule.start} - {schedule.end}
+										</span>
+										{schedule.name !== "After School" ?
+											`${schedule.start} - ${schedule.end}`
+											: `After ${schedule.start}`
+										}
 									</p>
 								))}
 							</div>

@@ -2,15 +2,18 @@
 	width: 100%;
 	height: 100%;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+}
+
+#pills {
+	display: flex;
+	position: absolute;
 }
 
 #schedule_type {
 	margin-left: 2vw;
 }
 #current_time {
-	margin-left: calc(3vw + 160px);
+	margin-left: 1vw;
 }
 
 #schedule_widget {
@@ -30,8 +33,7 @@
 }
 
 #current_period {
-	font-size: 3.5rem;
-
+	font-size: 6rem;
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
@@ -40,10 +42,16 @@
 	text-align: center;
 }
 
+.small {
+	font-size: 1rem;
+}
 .highlight {
 	font-size: 2rem;
 }
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
+	#current_period {
+		font-size: 4.5rem;
+	}
 	#schedule_widget {
 		font-size: 1.25rem;
 	}

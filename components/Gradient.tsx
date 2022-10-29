@@ -36,11 +36,22 @@ const GradientBorder = (props: {id?: string, className?: string, onClick?: Mouse
 
 const GradientPill = (props: {title: string, id?: string, onClick?: MouseEventHandler}) => {
     /*
+     * Reusable template <div> for making gradient-bordered "pill" titles while positioning them absolutely.
+     */
+    return (
+        <div className={styles.single}>
+            <GradientPillCore title={props.title} id={props.id} onClick={props.onClick} />
+        </div>
+    )
+}
+
+const GradientPillCore = (props: {title: string|ReactNode, id?: string, onClick?: MouseEventHandler}) => {
+    /*
      * Reusable template <div> for making gradient-bordered "pill" titles.
      */
     return (
         <GradientBorder className={styles.pill} id={props.id} onClick={props.onClick}>
-            <span>{props.title}</span>
+            <span className={styles.text}>{props.title}</span>
         </GradientBorder>
     )
 }
@@ -86,4 +97,4 @@ const GradientButton = (props: {id?: string, className?: string, href?: string, 
     )
 }
 
-export { GradientTitle, GradientPill, GradientBorder, GradientShadow, GradientBorderShadow, GradientButton };
+export { GradientTitle, GradientPill, GradientPillCore, GradientBorder, GradientShadow, GradientBorderShadow, GradientButton };

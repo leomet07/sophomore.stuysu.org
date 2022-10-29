@@ -55,8 +55,6 @@
 		padding-left: 0.4rem;
 		display: block;
 		filter: var(--asset-filter);
-	}
-	.menu label {
 		cursor: pointer;
 	}
 	.links_container {

@@ -26,16 +26,20 @@
 }
 
 .pill {
-    border-radius: 10px;
+    border-radius: 8px;
     width: fit-content;
-    height: 40px;
-    position: absolute;
-    z-index: 3;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.pill span {
+
+.single .pill {
+    position: absolute;
+    z-index: 3;
+}
+
+.pill .text {
     font-size: 1.3rem;
     padding-right: 25px;
     padding-left: 25px;

@@ -1,5 +1,5 @@
 import styles from "../styles/ScheduleWidget.module.css";
-import { GradientPill, GradientShadow } from "./Gradient";
+import { GradientPill, GradientPillCore, GradientShadow } from "./Gradient";
 import { ReceivedSchedule } from "../types/db_types";
 import { useEffect, useState } from "react";
 
@@ -10,7 +10,8 @@ interface TimeUnits {
 }
 interface TimeState {
 	units: TimeUnits;
-	locale_time_string: string;
+	locale_time_string_main: string;
+	locale_time_string_secondary: string;
 	seconds: number;
 	period_index: number;
 	units_elapsed: TimeUnits;
@@ -96,7 +97,8 @@ const ScheduleWidget = (props: {
 
 			setallTimeInfo({
 				units: current_units,
-				locale_time_string: locale_time_string,
+				locale_time_string_main: locale_time_string.slice(0, -6),
+				locale_time_string_secondary: locale_time_string.slice(-6, -3),
 				seconds: current_seconds,
 				period_index: period_index,
 				units_elapsed: units_elapsed,
@@ -107,16 +109,24 @@ const ScheduleWidget = (props: {
 	}, [props.current_schedule]);
 	return (
 		<div id={styles.container}>
-			<GradientPill
+			<div id={styles.pills}>
+			<GradientPillCore
 				title={props.current_schedule_name}
 				id={styles.schedule_type}
 			/>
-			<GradientPill
+			<GradientPillCore
 				title={
-					allTimeInfo ? allTimeInfo.locale_time_string : "XX:XX:XX PM"
+					allTimeInfo ?
+						<span>{allTimeInfo.locale_time_string_main}
+							<span className={styles.small}>
+								{allTimeInfo.locale_time_string_secondary}
+							</span>
+						</span>
+						: "XX:XX:XX"
 				}
 				id={styles.current_time}
 			/>
+			</div>
 			<GradientShadow id={styles.schedule_widget}>
 				<div className={styles.bottom}>
 					<p>

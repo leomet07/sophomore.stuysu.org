@@ -16,15 +16,23 @@
 }
 
 #label {
-	margin-left: 1.9vw;
+	margin-left: 2vw;
 	margin-top: -20px;
 }
 
 #schedule_container {
-	font-size: 1.3rem;
+	font-size: 1.25rem;
 	display: flex;
 	justify-content: space-between;
 	height: 100%;
+	padding: 3%;
+}
+
+#divider {
+	border: 1px solid var(--secondary-color);
+	border-left: none;
+	margin-top: 1%;
+	margin-bottom: 1%;
 }
 
 #right,
@@ -47,6 +55,11 @@
 
 .hidden #bell_schedule {
 	height: 0;
+}
+
+.cur_period {
+	background-color: var(--primary-color);
+	color: var(--base-color);
 }
 
 @media (max-width: 1130px) {
