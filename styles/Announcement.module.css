@@ -2,7 +2,7 @@
 	position: relative;
 	box-sizing: border-box;
 
-	min-height: 140px;
+	min-height: 170px;
 	height: 22vh;
 	margin-bottom: 2vh;
 
@@ -43,7 +43,11 @@
 	font-family: "Manrope", "Arial", sans-serif;
 	font-style: normal;
 	font-weight: 450;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 
 	color: var(--primary-color);
+}
+
+.text a {
+	text-decoration: underline;
 }
