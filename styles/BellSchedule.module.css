@@ -102,4 +102,12 @@
 		cursor: pointer;
 		margin-left: 3vw;
 	}
+
+	#divider {
+		display: none;
+	}
+	.cur_period {  /* reset on mobile view*/
+		color: inherit;
+		background-color: inherit;
+	}
 }
