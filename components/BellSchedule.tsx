@@ -3,13 +3,17 @@
 import styles from "../styles/BellSchedule.module.css";
 import { useState, useEffect, Key } from "react";
 import { GradientPill } from "./Gradient";
-import { ReceivedSchedule } from "../types/db_types";
+import { get_current_period, ParsedPeriod } from "../lib/periodHelpers";
 
-const BellSchedule = (props: { current_schedule: ReceivedSchedule }) => {
+const BellSchedule = (props: { parsed_schedule: ParsedPeriod[] }) => {
 	// Remove passing periods
-	const display_schedule = props.current_schedule.segments.filter(
+	const display_schedule = props.parsed_schedule.filter(
 		(v) => !v.name.includes("Passing")
 	);
+
+	const curPeriod: string = props.parsed_schedule[
+		get_current_period(props.parsed_schedule)
+	].name;
 
 	const [width, setWidth] = useState(0);
 
@@ -59,10 +63,14 @@ const BellSchedule = (props: { current_schedule: ReceivedSchedule }) => {
 									)
 									.map((schedule) => (
 										<p key={schedule.name as Key}>
-											<span className={styles.highlight}>
-												{schedule.name}
+											<span className={schedule.name === curPeriod ? styles.cur_period : undefined}>
+												<span className={styles.highlight}>
+													{schedule.name}
+												</span>
+												<span className={styles.time}>
+													{`${schedule.name !== "Before School" ? schedule.startString + " -" : "Before"} ${schedule.endString}`}
+												</span>
 											</span>
-											{`${schedule.name !== "Before School" ? schedule.start + " -" : "Before"} ${schedule.end}`}
 										</p>
 									))}
 							</div>
@@ -70,13 +78,17 @@ const BellSchedule = (props: { current_schedule: ReceivedSchedule }) => {
 							<div id={styles.left}>
 								{display_schedule.map((schedule) => (
 									<p key={schedule.name as Key}>
-										<span className={styles.highlight}>
-											{schedule.name}
+										<span className={schedule.name === curPeriod ? styles.cur_period : undefined}>
+											<span className={styles.highlight}>
+												{schedule.name}
+											</span>
+											<span className={styles.time}>
+												{schedule.name !== "After School" ?
+													`${schedule.startString} - ${schedule.endString}`
+													: `After ${schedule.startString}`
+												}
+											</span>
 										</span>
-										{schedule.name !== "After School" ?
-											`${schedule.start} - ${schedule.end}`
-											: `After ${schedule.start}`
-										}
 									</p>
 								))}
 							</div>

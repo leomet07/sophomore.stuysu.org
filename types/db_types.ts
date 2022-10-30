@@ -31,7 +31,7 @@ export interface ReceivedSchedule {
 	name: string;
 	segments: ScheduleSegment[];
 }
-interface ScheduleSegment {
+export interface ScheduleSegment {
 	start: string;
 	end: string;
 	name: string;
