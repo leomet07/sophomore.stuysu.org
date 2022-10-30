@@ -53,7 +53,7 @@
     padding-bottom: 150%;
     top: 200%;
     left: -25%;
-    border-radius: 50%;
+    border-radius: 50% 50% 0 0;
     z-index: 0;
     background-image: var(--gradient-purple);
     transition: top 0.5s;
