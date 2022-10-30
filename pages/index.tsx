@@ -1,4 +1,3 @@
-import type { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Announcement from "../components/Announcement";
@@ -14,6 +13,7 @@ import getServerUrl from "../lib/getServerUrl";
 import { InferGetServerSidePropsType } from "next";
 import { Key } from "react";
 import { GradientTitle } from "../components/Gradient";
+import { ParsedPeriod, parsePeriod } from "../lib/periodHelpers";
 
 const Home = (
 	props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -31,6 +31,7 @@ const Home = (
 	const current_schedule: ReceivedSchedule =
 		props.schedules.find((v) => v.name == current_schedule_name) ||
 		props.schedules[0];
+	const parsed_schedule: ParsedPeriod[] = current_schedule.segments.map(period => parsePeriod(period))
 
 	return (
 		<>
@@ -50,12 +51,12 @@ const Home = (
 				<section id={styles.schedule_widget}>
 					<ScheduleWidget
 						current_schedule_name={current_schedule_name}
-						current_schedule={current_schedule}
+						parsed_schedule={parsed_schedule}
 					/>
 				</section>
 				<section id={styles.schedule_information}>
 					<div id={styles.bell_schedule_container}>
-						<BellSchedule current_schedule={current_schedule} />
+						<BellSchedule parsed_schedule={parsed_schedule} />
 					</div>
 					<div id={styles.weekly_schedule_container}>
 						<WeeklySchedule
@@ -85,9 +86,7 @@ type getMainPageResponse = {
 	week_schedule_infos: ReceivedDay[];
 };
 
-export const getServerSideProps = async (
-	context: GetServerSidePropsContext
-) => {
+export const getServerSideProps = async () => {
 	const mainpage_request: any = await fetch(getServerUrl() + "/api/mainpage");
 	const mainpage_json: getMainPageResponse = await mainpage_request.json();
 

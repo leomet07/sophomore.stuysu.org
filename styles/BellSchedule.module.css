@@ -45,6 +45,9 @@
 
 .highlight {
 	font-weight: bold;
+}
+.highlight,
+.time {
 	margin-right: 5px;
 	margin-left: 5px;
 }
@@ -60,6 +63,7 @@
 .cur_period {
 	background-color: var(--primary-color);
 	color: var(--base-color);
+	border-radius: 4px;
 }
 
 @media (max-width: 1130px) {
