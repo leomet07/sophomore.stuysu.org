@@ -46,7 +46,7 @@ const Home = (
 			<main className={styles.main}>
 				<h1 className={styles.title}>
 					SOPHOMORE CAUCUS&nbsp;
-					<GradientTitle>&lsquo;22</GradientTitle>
+					<GradientTitle>&lsquo;23</GradientTitle>
 				</h1>
 				<section id={styles.schedule_widget}>
 					<ScheduleWidget
