@@ -81,7 +81,7 @@ const ScheduleWidget = (props: {
 						)}
 						<span className={styles.highlight}>
 							{allTimeInfo
-								? allTimeInfo.elapsed.getMinutes()
+								? allTimeInfo.elapsed.getMinutes() + Math.round(allTimeInfo.elapsed.getSeconds() / 60)
 								: "XX"}
 						</span>
 						m passed
@@ -108,7 +108,7 @@ const ScheduleWidget = (props: {
 						)}
 						<span className={styles.highlight}>
 							{allTimeInfo
-								? allTimeInfo.remaining.getMinutes()
+								? allTimeInfo.remaining.getMinutes() + Math.round(allTimeInfo.remaining.getSeconds() / 60)
 								: "XX"}
 						</span>
 						m left
