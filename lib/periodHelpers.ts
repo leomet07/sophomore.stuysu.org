@@ -12,21 +12,15 @@ export interface ParsedPeriod {
 }
 
 
-function datetimeToSeconds(date: Date): number {
-    return date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
-}
-
-export function curSeconds(): number {
-    const date = new Date();
+export function datetimeToSeconds(date: Date): number {
     return date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
 }
 export function get_current_period (
-    schedule: ParsedPeriod[]
+    schedule: ParsedPeriod[],
+    curTime: Number = datetimeToSeconds(new Date())
 ): number {
-    const now = datetimeToSeconds(new Date());
-
     for (let i = 0; i < schedule.length; i++) {
-        if (now < schedule[i].endSeconds) {
+        if (curTime < schedule[i].endSeconds) {
             return i;
         }
     }

@@ -2,7 +2,7 @@ import styles from "../styles/ScheduleWidget.module.css";
 import { GradientPillCore, GradientShadow } from "./Gradient";
 import { useEffect, useState } from "react";
 import {
-	curSeconds,
+	datetimeToSeconds,
 	get_current_period,
 	ParsedPeriod,
 	secondsToTime, toStuyTimeString,
@@ -24,10 +24,10 @@ const ScheduleWidget = (props: {
 
 	useEffect(() => {
 		const id = setInterval(() => {
-			const locale_time_string = toStuyTimeString(new Date(), "medium");
-			const current_seconds = curSeconds();
-
-			const period_index = get_current_period(props.parsed_schedule);
+			const time = new Date();  // single source of truth
+			const locale_time_string = toStuyTimeString(time, "medium");
+			const current_seconds = datetimeToSeconds(time);
+			const period_index = get_current_period(props.parsed_schedule, current_seconds);
 
 			const elapsed = secondsToTime(
 				current_seconds - props.parsed_schedule[period_index].startSeconds
